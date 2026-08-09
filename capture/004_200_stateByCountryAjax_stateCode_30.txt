@@ -1,0 +1,1689 @@
+URL: https://impds.nic.in/sale/stateByCountryAjax?stateCode=30
+STATUS: 200
+TIME: 2026-08-04 04:40:29.900595
+======================================================================
+
+
+
+
+<!-- <script type="text/javascript" src="assets/plugins/bootstrap/js/jquery-1.10.2.js"></script> -->
+<script type="text/javascript" src="assets/plugins/bootstrap/js/jquery.min.js"></script>
+<link href="/sale/assets/css/slider.css" type="text/css">
+<style>
+.activator {
+	cursor: pointer;
+}
+
+.activator.open, .activator:hover {
+	background: #ccf;
+}
+
+.activator.open .fa-plus, .activator+.hidden-row {
+	display: none;
+}
+
+.activator.open+.hidden-row {
+	display: table-row;
+}
+
+.activator.open .fa-minus {
+	display: inline-block;
+}
+.swal-button {
+  background-color: #0F548C !important; /* Dark enough for contrast */
+  color: #FFFFFF !important;           /* White text */
+}
+
+	@media (max-width: 1350px) {
+
+		.info {
+			margin-top: 15px;
+			text-align: center;
+		}
+		.counter.convert, .perce_val {
+			display: block;
+			margin-top: 5px;
+		}
+	}
+	@media (max-width: 1500px)  {
+		.status1.m_menu {
+			font-size: 14px;
+			padding: 5px;
+			text-align: center;
+		}
+		.info {
+			margin-top: 15px;
+			text-align: center;
+
+		}
+		.counter.convert, .perce_val {
+			display: block;
+			margin-top: 5px;
+		}
+		}
+.fa-hand-o-left:focus  {
+  outline: 3px solid #005fcc !important;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.popup_table_rec1 {
+	width: 100%;
+	overflow: hidden;
+	font-family: Arial, sans-serif;
+}
+
+/* Cell Styling */
+.popup_table_rec1 td {
+	padding: 12px;
+	border-bottom: 1px solid #e0e0e0;
+	color: #555;
+	font-size: 14px;
+}
+
+/* Label Cells Styling */
+.popup_table_rec1 td:first-child {
+	font-weight: bold;
+	color: #2f4f4f; /* Darker color for labels */
+}
+
+/* Separator Column */
+.popup_table_rec1 td:nth-child(2) {
+	width: 10px;
+	text-align: center;
+	color: #666;
+}
+
+.table-responsive:focus-within {
+  overflow: auto;
+ }
+ 
+.focus-table [tabindex="0"]:focus,
+.focus-table th:focus,
+.focus-table td:focus {
+  outline: 3px solid #005fcc !important;
+  outline-offset: 2px !important;
+
+}
+</style>
+<script>
+(() => {
+  const selTbl = '.focus-table';
+
+  const makeFocusable = () => {
+    document.querySelectorAll(selTbl + ' th, ' + selTbl + ' td').forEach(c => {
+      if (!c.hasAttribute('tabindex')) c.tabIndex = 0;
+      c.addEventListener('focus', () => c.classList.add('cell-focus'));
+      c.addEventListener('blur', () => c.classList.remove('cell-focus'));
+    });
+  };
+
+  const observer = new MutationObserver(() => makeFocusable());
+  observer.observe(document.body, { childList: true, subtree: true });
+  makeFocusable();
+})();
+</script>
+
+<div class="container-fluid main-containt"  >
+
+<section class="padding-bottom-10" style="background:#f9f9f9;">
+	 
+		 
+		  <div class="row">
+		  
+		
+			<!-- ********************************************* -->
+
+		<div class="col-md-3" >
+		  
+		  <div class="table-responsive" style="position:relative;">
+		        
+		         
+				          <div class="blink_icon_img"  style="top:154px; left:173px; ">
+							<a href="#" title="NORTH GOA" aria-label="NORTH GOA" onclick="stateData('585');"><img class="map" src="images/blinkingledlight.gif" alt="" aria-label="NORTH GOA" width="12" height="12"></a></div>
+							
+				   
+		         
+				          <div class="blink_icon_img"  style="top:271px; left:200px; ">
+							<a href="#" title="SOUTH GOA" aria-label="SOUTH GOA" onclick="stateData('586');"><img class="map" src="images/blinkingledlight.gif" alt="" aria-label="SOUTH GOA" width="12" height="12"></a></div>
+							
+				   
+				 
+				 				 
+				 
+						   
+						    
+						   
+						    
+						   
+						    
+						   
+						   
+						    
+						   
+						    
+						   
+						   
+						    
+						   
+						   
+						   
+						    
+						   
+						    
+						   
+						   
+						   
+						     
+						   
+						    
+						   
+						    
+						   
+						    
+						   
+						  
+						   
+						    
+						   
+						    
+						   
+						   
+						   
+						    
+						   
+						   
+						   
+						   
+						   
+						   
+						       <img src="images/state_map/goa.png" alt="map" class="en_logo" style=" width:350px;">
+						    
+						   
+						    
+						   
+						   
+								
+								 
+						     
+						    
+						   
+						     
+						   
+						   
+						    
+						   
+						   
+						      
+						   
+						     
+						    
+						   
+						     
+					   
+					   
+				       
+				   
+				  
+				   
+
+
+		   
+		  </div>
+		   <div>
+            <div id = "containerdata2" style = "width: 100%; height: 300px; margin: 0 auto" tabindex="0"> </div> 
+	  	    </div>	
+		  
+		  </div>
+  
+		  <div class="col-md-6">
+		  
+		  		<div class="dash-row1 margin-top-0">
+		 			 <div class="metro-nav">
+						<div class="metro-nav-block nav-block-red block-3" tabindex="0">
+							<div class="top_circle_icons top_circle_bg1" role="img" aria-label="Map of India icon representing the selected state">
+  								<img class="pic_icon1"	src="images/india-map.png"	alt="Map of India icon"	aria-hidden="true"> </div>
+
+	                        
+	                         <div class="status m_menu" key="state" style="text-decoration: underline;">
+	                            
+								    GOA<br/>
+								
+								</div>
+								 <div class="info atoz">
+							         
+										<i class="fa fa-hand-o-left" tabindex="0"
+   											style="font-size:30px; align:right; cursor:pointer;"
+   											role="button"
+   											aria-label="Go back"
+   											onClick="backData('30')"
+   											onkeydown="if(event.key === 'Enter' || event.key === ' ') backData('30');">
+										</i>
+									
+	                             </div> 
+	                        
+                    	</div>
+					<div class="metro-nav-block nav-block-red block-3">
+                        
+                         
+							       
+							  <a data-original-title="" href="#"  data-bs-toggle="modal" data-bs-target="#myModal11" onclick="liveDistrictdata('30')" style="cursor: pointer;">
+							                          <!--  <i class="icon-user"></i>-->
+							                          <div class="top_circle_icons top_circle_bg2">
+                            <img class="pic_icon2" src="images/location.png" alt="location_icon" aria-label="location">
+                            </div> 
+							    <div class="status m_menu" key="state" style="text-decoration: underline;">ACTIVES DISTRICTS</div>
+							      <div class="info atoz"><span class="counter_num2" style="text-decoration: underline;">
+							         2 </span></div>
+
+							  </a>
+							       
+                    </div>
+	
+<div class="metro-nav-block nav-block-red block-3" tabindex="0">
+
+  <div class="top_circle_icons top_circle_bg3">
+    <img class="pic_icon3" src="images/home.png" alt="home icon">
+  </div>
+
+  <div class="status m_menu" key="fps">FAIR PRICE SHOPS</div>
+
+  <div class="info atoz">
+    <span class="counter1 counter_num3" style="display: inline-block;">
+      
+      
+        
+      
+        
+      
+      452
+    </span>
+  </div>
+</div>
+	
+
+					
+	</div>	
+	
+
+<div class="metro-nav">
+
+<div class="metro-nav-block1 nav-block-greenlight block-4" tabindex="0">
+                          <!--  <i class="icon-user"></i>-->
+                          <div class="status1 m_menu" key="trs">Total e-Transaction</div><br>
+                            <div class="info infi_count" style="top:16px;">
+							<span class="counter convert" style="display: inline-block;">
+							
+							
+							
+							
+							
+														
+														    
+														    
+														    
+														    
+														    
+														 
+														
+														    
+														    
+														    
+														    
+														    
+														 
+														
+														 111,115</span>
+							</div>
+							
+							<div class="info atoz">
+							<span class="perce_text">
+							<span class="color">(<span class="color_a m_menu" key="aa">A</span>+<span class="color_b m_menu" key="bb">B</span>+<span class="color_c m_menu" key="cc">C</span>)</span>
+							</span>
+							</div>	
+						<div class="notific_icons notific_bg1">
+						<img class="cercle_icons1" src="images/transaction.png" alt="transaction-icon" aria-label="icon for transaction">
+						</div>	
+                            
+                    </div>
+	
+	
+    			<div class="metro-nav-block1 nav-block-green block-4" tabindex="0">
+                          <!--  <i class="icon-user"></i>-->
+                          <div class="status1 m_menu" key="aafioc">Aadhaar Authenticated<!-- AADHAAR AUTHENTICATED INCLUDING CASHLESS --></div>
+                            <div class="info infi_count" style="top:16px;">
+							<span class="counter convert" style="display: inline-block;">
+							       110,581</span></div>	
+							<div class="info percent">
+							<span class="perce_val">99.52%</span>
+							</div>
+							
+							<div class="info atoz">
+							<span class="perce_text">
+							<span class="color">(<span class="color_a m_menu" key="aa">A</span>)</span>
+							</span>
+							</div>					
+							
+                           <div class="notific_icons notific_bg2">
+							<img class="cercle_icons2" src="images/adhaar.png" alt="aadhaar_icon" aria-label="icon for aadhaar">
+							</div>   
+                    </div>
+	
+   				 <div class="metro-nav-block1 nav-light-pink block-4" tabindex="0">
+                          <!--  <i class="icon-user"></i>-->
+                          <div class="status1 m_menu" key="aom1">Other Mode Authenticated</div>
+                            <div class="info infi_count" style="top:21px;"><span class="counter convert" style="display: inline-block;">
+                                   0</span></div>
+                           
+                           <div class="info percent">
+							<span class="perce_val">0%</span>
+							</div>
+							
+							<div class="info atoz">
+							<span class="perce_text">
+							<span class="color">(<span class="color_a m_menu" key="">B</span>)</span>
+							</span>
+							</div>					
+							
+							<div class="notific_icons notific_bg3">
+							<img class="cercle_icons3" src="images/card.png" alt="card-icon" aria-label="icon for card">
+							</div>
+                            
+                    </div>
+	
+   				 <div class="metro-nav-block1 nav-light-purple block-4" tabindex="0">
+                          <!--  <i class="icon-user"></i>-->
+                          <div class="status1 m_menu" key="nat1">Non-Authenticated</div>
+                            <div class="info infi_count" style="top:16px;"><span class="counter convert" style="display: inline-block;">
+                                   534</span></div>
+							<div class="info percent">
+							<span class="perce_val">0.48%</span>
+							</div>
+							
+							<div class="info atoz">
+							<span class="perce_text">
+							<span class="color">(<span class="color_a m_menu" key="">C</span>)</span>
+							</span>
+							</div>					
+							
+							<div class="notific_icons notific_bg4">
+							<img class="cercle_icons4" src="images/user.png" alt="user-icon">
+							</div>
+                            
+                    </div>
+				
+	
+	</div>
+		  
+		  </div>
+		  
+		   <!-- number of RC start -->
+						<div class="dash-row2 margin-top-20">
+<div class="row hed_title">
+<div class="col-md-6 offset-md-3">
+<!-- <h4 class="margin-bottom-0 text-center"><span>Number of RC</span></h4> -->
+</div>
+</div>
+						<div class="table-responsive">
+						<table  role="table" aria-label="Number of RC" class="table table-bordered table-vertical-middle margin-bottom-0 state-rep7 focus-table">
+							<thead>
+								<tr>
+								  <th rowspan=2>NFSA Ration Card Type</th>
+									<th class="m_menu" key="h_nrc" colspan=2 >Number of </th>
+									<th class="m_menu" key="h_ntrc" colspan=2 >Number of Aadhaar seeded</th>
+								</tr>
+								<tr>
+									<th class="m_menu" key="h_nrc" >Ration Card </th>
+									<th class="m_menu" key="h_ntrc" >Beneficiary</th>
+									<th class="m_menu" key="h_nrc" >Ration Card </th>
+									<th class="m_menu" key="h_ntrc" >Beneficiary</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+							
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Priority Household (PHH)</td>
+							<td><span class="convert">
+							 
+							  
+							  
+							  
+														 
+														    
+														     
+														          
+														     
+														
+														    
+														     
+														          
+														     
+														
+							 118,899</span></td>							
+							<td><span class="bigcount font-lato convert">437,620</span></td>
+							<td><span class="bigcount font-lato convert">118,781</span></td>
+							<td><span class="bigcount font-lato convert">436,475</span></td>
+							
+							</tr>
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Antyodaya Anna Yojana (AAY)</td>
+							<td><span class="convert">
+							 
+							  
+							  
+							  
+														 
+														    
+														    
+														    
+														     
+														     
+														     
+														
+														    
+														    
+														    
+														     
+														     
+														     
+														
+							 11,600</span></td>
+							
+							
+							<td><span class="bigcount font-lato convert">38,842</span></td>
+							<td><span class="bigcount font-lato convert">11,581</span></td>
+							<td><span class="bigcount font-lato convert">38,664</span></td>
+							
+							</tr>
+							
+							
+
+							 </tbody>
+							<tfoot>
+												<tr>
+													<td class="m_menu" key="h_total">Total</td>
+  											        									
+												        <td><span  class="convert"> 130,499</span></td>
+														
+												        
+														<td><span  class="convert">476462</span></td>
+														<td><span  class="convert"> 130,362</span></td>
+														<td><span  class="convert"> 475,139</span></td>
+													
+												</tr>
+											</tfoot>
+								
+						</table>
+
+
+						</div>
+						</div>
+						<!-- Number of RC end here -->
+<div class="dash-row2 margin-top-20">
+<div class="row hed_title">
+<div class="col-md-6 offset-md-3">
+<h4 class="margin-bottom-0 text-center"><span>Number of Transaction</span></h4>
+</div>
+</div>
+						<div class="table-responsive">
+										<table  role="table"  aria-label="Number of Transaction" class="table table-bordered table-vertical-middle margin-bottom-0 state-rep0 focus-table">
+							<thead>
+								<tr>
+								  <th style="width: 32%;">NFSA Ration Card Type</th>
+									<th class="m_menu" key="h_nrc" style="width: 17%;">Regular</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Intra State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Inter State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Total</th>
+									
+								</tr>
+							</thead>
+							
+							<tbody>
+							
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Priority Household (PHH)</td>
+							<td><span class="convert">
+							 
+							 
+							 
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+							94,763</span></td>
+							<td><span class="bigcount font-lato convert">3,541</span></td>
+							<td><span class="bigcount font-lato convert">2,933</span></td>
+							<td><span class="bigcount font-lato convert">101,237</span></td>
+							
+							</tr>
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Antyodaya Anna Yojana (AAY)</td>
+							<td><span class="convert">
+							 
+							 
+							 
+														 
+													 	    
+														    
+														     
+														 
+													 	    
+														    
+														     
+														  
+							9,381</span></td>
+							<td><span class="bigcount font-lato convert">142</span></td>
+							<td><span class="bigcount font-lato convert">355</span></td>
+							<td><span class="bigcount font-lato convert">9,878</span></td>
+							
+							</tr>
+							
+
+							 </tbody>
+								
+						</table>
+
+						</div>
+						</div>
+	
+	<div class="dash-row2 margin-top-20">
+						
+						<div class="row hed_title">
+<div class="col-md-6 offset-md-3">
+<h4 class="margin-bottom-0 text-center"><span>Number of Transacted Ration Card</span></h4>
+</div>
+</div>
+						
+						<div class="table-responsive">
+				<table  role="table"  aria-label="Number of Transacted Ration Card" class="table table-bordered table-vertical-middle margin-bottom-0 state-rep2 focus-table">
+							<thead>
+								<tr>
+								  <th style="width: 32%;">NFSA Ration Card Type</th>
+									<th class="m_menu" key="h_nrc" style="width: 17%;">Regular</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Intra State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Inter State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Total</th>
+									
+								</tr>
+							</thead>
+							
+							<tbody>
+							
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Priority Household (PHH)</td>
+							<td><span class="convert">
+							 
+							 
+							 
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+							94,704</span></td>
+							<td><span class="bigcount font-lato convert">3,538</span></td>
+							<td><span class="bigcount font-lato convert">2,926</span></td>
+							<td><span class="bigcount font-lato convert">101,168</span></td>
+							
+							</tr>
+							
+							</tr>
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Antyodaya Anna Yojana (AAY)</td>
+							<td><span class="convert">
+							 
+							 
+							 
+														 
+													 	    
+														    
+														     
+														 
+													 	    
+														    
+														     
+														  
+							9,372</span></td>
+							<td><span class="bigcount font-lato convert">142</span></td>
+							<td><span class="bigcount font-lato convert">354</span></td>
+							<td><span class="bigcount font-lato convert">9,868</span></td>
+							
+							</tr>
+							</tbody>
+							
+						</table>
+
+						</div>
+						</div>
+						
+						<div class="dash-row3 margin-top-30">
+						
+						<div class="row hed_title">
+<div class="col-md-6 offset-md-3">
+<h4 class="margin-bottom-0 text-center"><span>Distributed Quantity(In MT)</span></h4>
+</div>
+</div>
+						
+						<div class="table-responsive">
+
+										<table  role="table"  aria-label="Distributed Quantity(In MT)"  class="table table-bordered table-vertical-middle margin-bottom-0 state-rep1	focus-table" >
+											<thead>
+												<tr>
+													<th class="m_menu" key="h_comm" style="width: 20%;">Commodity</th>
+													<th class="m_menu" style="width: 20%;" key="central_alloc">Regular Txn</th>
+													<th class="m_menu" key="h_dist" style="width: 20%;">Intra state Txn</th>
+													<th class="m_menu" key="h_pdist" style="width: 20%;">Inter State Txn</th>
+													<th class="m_menu" key="h_pdist" style="width: 20%;">Total</th>
+
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td class="m_menu text-left" key="h_wheat">Wheat</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+											<tr>
+													<td class="m_menu text-left" key="h_wheat">Fortified Rice</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert">
+													2,099.803</span></td>
+													<td><span class="convert">70.88</span></td>
+													<td><span class="convert">68.45</span></td>
+													<td><span class="convert">2239.133</span></td>
+													
+												</tr>
+											
+											<tr>
+													<td class="m_menu text-left" key="h_wheat">Rice</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+                                                    <td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0.05</span></td>
+													<td><span class="convert">0.05</span></td>		
+												</tr>
+		                                      <tr>
+										<td class="m_menu text-left activator" key="h_wheat">
+										  <button class="menu-toggle" aria-expanded="false" aria-controls="coarseGrainsPanel">
+										    <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus d-none" aria-hidden="true"></i> Coarse Grains
+										  </button>
+										</td>											             
+														
+													     
+													     
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+                                                    <td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												
+												<tr class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Barley</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												 <tr class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Bajra</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												
+												<tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Maize</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>									
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												  <tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Jowar</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+											
+	                                              <tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Ragi</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+											     <tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Kodo</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+														    
+														    
+														    
+														
+    
+    
+													<td><span  class="convert"> 0</span></td>
+													<td><span  class="convert"> 0</span></td>
+													<td><span  class="convert"> 0</span></td>
+													<td><span  class="convert">0.0</span></td>
+													
+												</tr>
+											
+													</tbody>
+											<tfoot>
+												<tr>
+													<td class="m_menu" key="h_total">Total</td>
+  											        									
+												        <td><span  class="convert"> 2,099.803</span></td>
+														<td><span  class="convert"> 70.88</span></td>
+												        <td><span  class="convert"> 68.5</span></td>
+														<td><span  class="convert">2239.18</span></td>
+													
+												</tr>
+											</tfoot>
+											
+										</table>
+
+									</div>
+									</div>		  
+		  
+		  
+		
+		  </div>
+	
+	<div class="col-md-3 margin-top-10">
+	
+	
+		
+		
+<div class="right_side_slider">		
+<h2 class="owl-featured noborder"></h2>								
+<div class="owl-carousel featured nomargin owl-padding-10" data-plugin-options='{"singleItem": false, "items": "1", "stopOnHover":false, "autoPlay":false, "autoHeight": false, "navigation": true, "pagination": false}'>
+
+
+<div class="client-logo">									
+		 <div class="state_count state_count_titl">
+		  <h3>Aadhaar Authentication Transactions</h3>
+		  </div>
+
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >NORTH GOA</h3></td>
+		  	<td class="text-center convert">52,470</td>
+		  	
+		  	<!-- <td class="text-center perc_col_red" style='width:65px;'>
+		  	100.00%
+		  	<span class="counter font-lato"></span></td> -->
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >SOUTH GOA</h3></td>
+		  	<td class="text-center convert">58,111</td>
+		  	
+		  	<!-- <td class="text-center perc_col_red" style='width:65px;'>
+		  	99.09%
+		  	<span class="counter font-lato"></span></td> -->
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	99.09%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+
+		  
+		  	
+</div>	  
+
+<div class="client-logo">									
+		 <div class="state_count state_count_titl">
+		  <h3>Intra-state Based Distribution</h3>
+		  </div>
+
+
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >SOUTH GOA</h3></td>
+		  	<td class="text-center convert">2,306</td>
+		  	
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	3.93%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >NORTH GOA</h3></td>
+		  	<td class="text-center convert">1,377</td>
+		  	
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	2.62%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+</div>
+<div class="client-logo">									
+		 <div class="state_count state_count_titl">
+		  <h3>Inter-State Based Distribution</h3>
+		  </div>
+
+
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >NORTH GOA</h3></td>
+		  	<td class="text-center convert">1,566</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	2.98%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >SOUTH GOA</h3></td>
+		  	<td class="text-center convert">1,722</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	2.94%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			 </div>
+
+		  
+		  	
+</div>
+		  
+			
+</div>		
+</div>
+</div>	 
+</div>	  
+		 
+		 <div class="row">
+	  	
+	  	 <div class="col-md-12">
+	  	 
+	
+	  	 
+<div style="width: 100%; overflow-x: auto;">
+
+	  	 <div id = "container1" style = "min-width: 800px; height: 350px; margin: 0 auto"> </div>
+
+	  	 </div>
+	  	 
+	  	 
+	  	</div>
+		 
+		  </section>
+
+</div>
+
+<!-- ############################################## MODEL ################################################ -->
+			
+			<div id="myModal11" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+			<h4 class="modal-title m_menu" key="l_state"  id="myModalLabel">Live District</h4>
+				<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				
+			</div>
+
+			<div class="modal-body">
+					
+						
+			<div class="row">
+			<div id="liveDivId">
+				
+			</div>
+			</div>
+	
+			</div>
+
+			
+
+		</div>
+	</div>
+</div> 
+    
+		<script type="text/javascript"> var plugin_path = 'assets/plugins/';</script>
+		<script type="text/javascript" src="assets/js/scripts.js"></script>		
+<script>
+$(function () {
+	  var $table = $("table");
+	  $table.find(".activator").click(function () {
+	    //$(this).toggleClass("open");
+	    $table.find(".customRow").toggleClass("d-none");
+	  });
+	});
+	
+$(document).ready(function (e) {
+    $('#statecode').on('change', function () {
+        ajaxCallDistrictChange();
+    });
+
+    $(".menu-toggle").click(function () {
+        const $btn = $(this);
+        const panelId = $btn.attr("aria-controls");
+        const $panel = $("#" + panelId);
+
+        // Toggle panel visibility
+        $panel.toggle();
+
+        // Toggle aria-expanded
+        const expanded = $btn.attr("aria-expanded") === "true";
+        $btn.attr("aria-expanded", !expanded);
+
+        // Toggle icons
+        $btn.find("i").toggleClass("d-none");
+    });
+});
+</script>
+<!-- currency converter -->
+<script>
+			$(function() {
+				var convertText = $(".convert");
+				for(var i=0; i<convertText.length; i++){
+					$(".convert").eq(i).text(convert($(".convert").eq(i).text()));
+				}
+				function convert(text){
+					var x = text;
+					//var x = $('#result1').text();
+					x=x.toString();
+					x = x.replace(/\,/g, '');
+					var afterPoint = '';
+					if(x.indexOf('.') > 0)
+					afterPoint = x.substring(x.indexOf('.'),x.length);
+					x = Math.floor(x);
+					x=x.toString();
+					var lastThree = x.substring(x.length-3);
+					var otherNumbers = x.substring(0,x.length-3);
+					if(otherNumbers != '')
+						lastThree = ',' + lastThree;
+					var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + afterPoint;
+					return res;
+					//document.getElementById('result1').innerHTML = res;
+				}
+			});
+		</script>
+<script>
+ 
+function liveDistrictdata(stateId) {
+	$(".loader").show();
+	jQuery.ajax({
+		type : "GET",
+		url : "/sale/liveDistrictAjax",
+		data : { "stateCode" :stateId},
+		beforeSend : function() {
+
+		},
+		success : function(result) {
+			$(".loader").hide();
+			$("#liveDivId").html(result);
+		},
+		complete : function() {
+			$("#liveDivId").show();
+			//$("#stateDefaultDivId").hide();
+			
+
+		}
+	});
+
+	return false; 
+}
+
+
+function stateData(districtId) {
+	 var url = "districtByCountryAjax";
+	 $(".loader").show();
+		jQuery.ajax({
+			type : "GET",
+			url : url,
+			data : { "stateCode" :districtId},
+			beforeSend : function() {
+
+			},
+			success : function(result) {
+				$(".loader").hide();
+				$("#stateDivId").html(result);
+
+			},
+			complete : function() {
+		
+				$("#stateDivId").show();
+				$("#stateDefaultDivId").hide();
+				
+
+			}
+		});
+}
+
+
+ function backData(stateId) {
+ 	window.location="backdashboard";
+} 
+</script>
+		
+<script type="text/javascript">
+			function goBack() {
+			    window.history.back();
+			}
+			</script>
+			<!-- TO PREVENT BROWSER BACK BUTTON CLICK -->
+			<script type="text/javascript">
+				 window.history.forward();
+				
+				 //window.location="sessionexpired";
+				function noBack() {
+					window.history.forward(); 
+					
+					}  
+</script>
+<!-- <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script -->
+      <script type = "text/javascript">
+         google.charts.load('current', {packages: ['corechart']});     
+      </script>
+      <script type = "text/javascript">
+	  function drawChart() {
+          // Define the chart to be drawn12
+         var data = google.visualization.arrayToDataTable([
+             ['State Name','Aadhaar Transactions','Intra-state Transaction','Inter-State Transaction' ],
+             
+                  ['NORTH GOA',100.0,
+                  	2.6243567753001713,
+                  	2.9845626072041167],
+	            
+                  ['SOUTH GOA',99.08943643959417,
+                  	3.9321340267712506,
+                  	2.9363117060277943],
+	            
+	          
+          ]); 
+          var options = {title: 'Monthly State Transaction Performance Data',
+             vAxis: {format: "#'%'"},
+             is3D:true
+          };  
+          var chart = new google.visualization.ColumnChart(document.getElementById ('chartdiv'));
+          chart.draw(data, options);
+          
+       }
+</script> 
+<script type = "text/javascript">  
+         function drawChartComodities() {
+              var data = google.visualization.arrayToDataTable([
+            	  ['Authentication Type','Txn Count'],
+                  ['Aadhaar Authenticated', 110581.0],
+ 					 ['Other Mode Authenticated', 0.0],
+ 					 ['Non-Authenticated', 534.0]
+             ]);
+             var options = {title: 'Total Transactions',
+                hAxis: {title: 'Month-2021', titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0},is3D:true
+             };  
+             var chart = new google.visualization.PieChart(document.getElementById ('contardata2'));
+             chart.draw(data, options);
+          }
+         google.charts.setOnLoadCallback(drawChart);
+         google.charts.setOnLoadCallback(drawChartComodities);
+</script>
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+<script>
+am5.ready(function() {
+
+  // Create root
+  var root = am5.Root.new("containerdata2");
+  root.accessible = true;
+  root._logo.dispose();
+
+  root.setThemes([am5themes_Animated.new(root)]);
+
+  // Create chart
+  var chart = root.container.children.push(am5percent.SlicedChart.new(root, {
+    layout: root.verticalLayout,
+    role: "region",
+    ariaLabel: "Funnel chart showing Aadhaar transaction breakdown"
+  }));
+
+  // Funnel series
+  var series = chart.series.push(am5percent.FunnelSeries.new(root, {
+    alignLabels: false,
+    orientation: "vertical",
+    valueField: "value",
+    categoryField: "category",
+    bottomRatio: 1
+  }));
+
+  // Replace with your actual values
+  var total_transaction = 111115.0;
+  var aadhaar_txt = 110581.0;
+  var non_authenticated_txt = 534.0;
+  var authenticated_txt = 0.0;
+
+  // Accessible slice labels
+  series.slices.template.adapters.add("ariaLabel", function(text, target) {
+    var dataItem = target.dataItem;
+    if (dataItem) {
+      var value = dataItem.get("value");
+      var percent = ((value * 100) / total_transaction).toFixed(2);
+      return dataItem.get("category") + " Ã¢ÂÂ " + percent + "%";
+    }
+    return text;
+  });
+
+//Each slice can be focused and spoken
+  series.slices.template.setAll({
+    focusable: true,
+    role: "button",
+    ariaHidden: false,
+    cursorOverStyle: "pointer"
+  });
+  // Tooltip for visual users
+  series.slices.template.adapters.add("title", function(text, target) {
+    var dataItem = target.dataItem;
+    if (dataItem) {
+      var value = dataItem.get("value");
+      var percent = ((value * 100) / total_transaction).toFixed(2);
+      return dataItem.get("category") + ": " + percent + "%";
+    }
+    return text;
+  });
+
+  // Keyboard interaction for slices
+  series.slices.template.events.on("keydown", function(ev) {
+    if (ev.originalEvent.key === "Enter" || ev.originalEvent.key === " ") {
+      var slice = ev.target;
+      var dataItem = slice.dataItem;
+      if (dataItem) {
+        series.slices.each(function(s) { s.set("opacity", 1); });
+        slice.set("opacity", 0.6);
+
+        var value = dataItem.get("value");
+        var percent = ((value * 100) / total_transaction).toFixed(2);
+        document.getElementById("chartLiveRegion").textContent =
+          dataItem.get("category") + ": " + percent + "%";
+      }
+      ev.originalEvent.preventDefault();
+    }
+  });
+
+  // Set colors
+  series.get("colors").set("colors", [
+    am5.color("#507D32"), // Aadhaar Authenticated
+    am5.color("#166988"), // Non-Authenticated
+    am5.color("#CC6666")  // Other Mode Authenticated
+  ]);
+
+  // Set data
+  series.data.setAll([
+    { value: aadhaar_txt, category: "Aadhaar Authenticated" },
+    { value: non_authenticated_txt, category: "Non-Authenticated" },
+    { value: authenticated_txt, category: "Other Mode Authenticated" }
+  ]);
+
+  // Legend
+  var legend = chart.children.push(am5.Legend.new(root, {
+    centerX: am5.p50,
+    x: am5.p50,
+    marginTop: 15,
+    marginBottom: 15,
+    role: "list",
+    ariaLabel: "Chart legend"
+  }));
+
+  legend.data.setAll(series.dataItems);
+
+//Ensure legend item containers are positioned correctly
+legend.itemContainers.template.setAll({
+  focusable: true,
+  tabindex: 0,
+  role: "button", // change from listitem to button for better SR support
+  ariaHidden: false,
+  pointerEvents: "auto",
+  visible: true
+});
+
+  // After chart and legend are ready, force recalculation
+  chart.events.once("ready", function() {
+      legend.itemContainers.each(function(container, index) {
+          // set top positions manually based on index
+          container.set("y", chart.height() + 5 + index * 30); 
+          container.set("x", 100); // adjust left if needed
+      });
+  });
+
+
+  // Legend ARIA label
+legend.itemLabels.template.adapters.add("text", function(text, target) {
+  var dataItem = target.dataItem;
+  if (dataItem && dataItem.dataContext) {
+    var category = dataItem.dataContext.category;
+    var value = dataItem.dataContext.value;
+    var percent = ((value * 100) / total_transaction).toFixed(2);
+    return category + " (" + percent + "%)";
+  }
+  return text;
+});
+  // Update ARIA live region when legend items are clicked
+legend.itemContainers.template.adapters.add("ariaLabel", function(label, target) {
+  var dataItem = target.dataItem;
+  if (dataItem && dataItem.dataContext) {
+    var category = dataItem.dataContext.category;
+    var value = dataItem.dataContext.value;
+    var percent = ((value * 100) / total_transaction).toFixed(2);
+    return category + ": " + percent + "%; Press Enter to toggle visibility";
+  }
+  return label;
+});
+
+//Fix: make Enter key work (not Alt+Enter)
+legend.itemContainers.template.events.on("keydown", function(ev) {
+  if (ev.originalEvent.key === "Enter" || ev.originalEvent.key === " ") {
+    ev.originalEvent.preventDefault();
+    ev.target.events.dispatch("click", { type: "click", target: ev.target });
+    var dataItem = ev.target.dataItem;
+    if (dataItem && dataItem.dataContext) {
+      var category = dataItem.dataContext.category;
+      var value = dataItem.dataContext.value;
+      var percent = ((value * 100) / total_transaction).toFixed(2);
+      document.getElementById("chartLiveRegion").textContent =
+        category + " toggled. Current share " + percent + "%.";
+    }
+  }
+});
+  
+  // Initial ARIA live region update
+  setTimeout(function() {
+    var messages = series.dataItems.map(function(di) {
+      var category = di.get("category");
+      var value = di.get("value");
+      var percent = ((value * 100) / total_transaction).toFixed(2);
+      return category + ": " + percent + "%";
+    });
+    document.getElementById("chartLiveRegion").textContent = messages.join(". ");
+  }, 500);
+
+//After chart render, adjust accessibility overlay positions if needed
+  setTimeout(function() {
+    document.querySelectorAll('div[role="listitem"][aria-label*="Aadhaar Authenticated"]').forEach(function(el) {
+      el.style.top= "190px";
+      el.style.left= "60px";
+      el.style.width= "250px";
+
+    });
+    document.querySelectorAll('div[role="listitem"][aria-label*="Non-Authenticated"]').forEach(function(el) {
+        el.style.top= "215px";
+        el.style.left= "60px";
+     });
+  }, 1000); 
+  // Animate chart
+  series.appear(1000);
+  chart.appear(1000, 100);
+
+});
+</script>
+
+<script src="amcharts/core.js"></script>
+<script src="amcharts/charts.js"></script>
+<script src="amcharts/themeanimated.js"></script>
+
+<script>
+am4core.ready(function() {
+  am4core.useTheme(am4themes_animated);
+  am4core.options.autoSetClassName = true;
+  am4core.options.commercialLicense = true;
+  
+  var chart = am4core.create("container1", am4charts.XYChart3D);
+
+  chart.colors.list = [
+    am4core.color("#F08080"),
+    am4core.color("#1b7ea5"),
+    am4core.color("#62983e")
+  ];
+
+  chart.data = [
+    
+    {
+      "DistrictName": "NORTH GOA",
+      "Inter-StateTransaction": 2.9845626072041167,
+      "Intra-stateTransaction": 2.6243567753001713,
+      "AadhaarTransaction": 100.0
+    },
+    
+    {
+      "DistrictName": "SOUTH GOA",
+      "Inter-StateTransaction": 2.9363117060277943,
+      "Intra-stateTransaction": 3.9321340267712506,
+      "AadhaarTransaction": 99.08943643959417
+    },
+    
+  ];
+
+  chart.numberFormatter.numberFormat = "##.##";
+
+  var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+  categoryAxis.renderer.labels.template.rotation = 300;
+  categoryAxis.renderer.labels.template.wrap = true;
+  categoryAxis.renderer.labels.template.truncate = false;
+  categoryAxis.renderer.labels.template.maxWidth = 200;
+  
+  categoryAxis.dataFields.category = "DistrictName";
+  categoryAxis.renderer.grid.template.location = 0;
+  categoryAxis.renderer.minGridDistance = 0;
+  categoryAxis.renderer.labels.template.verticalCenter = "middle";
+  categoryAxis.renderer.labels.template.horizontalCenter = "right";
+  
+  // Enable wrapping
+  categoryAxis.renderer.labels.template.wrap = true;
+  categoryAxis.renderer.labels.template.truncate = false;
+  categoryAxis.renderer.labels.template.isMeasured = true;
+
+  var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+  valueAxis.title.text = "Monthly State Transaction Performance Data";
+  valueAxis.min = 0;
+  valueAxis.max = 100;
+  valueAxis.renderer.minGridDistance = 50;
+  valueAxis.renderer.labels.template.adapter.add("text", function(text) {
+    return text + "%";
+  });
+
+  var series = chart.series.push(new am4charts.ColumnSeries3D());
+  series.dataFields.valueY = "Inter-StateTransaction";
+  series.dataFields.categoryX = "DistrictName";
+  series.name = "Inter-State Transaction";
+  series.clustered = false;
+  series.columns.template.tooltipText = "Inter-State Transaction: [bold]{valueY}[/]% {categoryX}";
+  series.columns.template.fillOpacity = .8;
+
+  var series2 = chart.series.push(new am4charts.ColumnSeries3D());
+  series2.dataFields.valueY = "Intra-stateTransaction";
+  series2.dataFields.categoryX = "DistrictName";
+  series2.name = "Intra-state Transaction";
+  series2.clustered = false;
+  series2.columns.template.tooltipText = "Intra-state Transaction: [bold]{valueY}[/]% {categoryX}";
+
+  var series3 = chart.series.push(new am4charts.ColumnSeries3D());
+  series3.dataFields.valueY = "AadhaarTransaction";
+  series3.dataFields.categoryX = "DistrictName";
+  series3.name = "Aadhaar Transaction";
+  series3.clustered = false;
+  series3.columns.template.tooltipText = "Aadhaar Transaction: [bold]{valueY}[/]% {categoryX}";
+  series3.columns.template.fillOpacity = 0.9;
+
+  chart.legend = new am4charts.Legend();
+
+  //  Accessibility: enable focus for 20+ items
+  chart.events.on("ready", function() {
+      chart.series.each(function(series) {
+        series.columns.each(function(column) {
+          column.interactionsEnabled = true;
+          column.focusable = true;
+          column.role = "img";
+          column.readerTitle = series.name + ": " + column.dataItem.categoryX + " " +  parseFloat(column.dataItem.valueY).toFixed(2) + "%";
+        });
+      });
+  });
+});
+</script>
+<style>
+.amcharts-tooltip-div {
+  white-space: normal !important;
+}
+
+
+.amcharts-axis-label {
+  display: block !important;
+  white-space: normal !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  max-width: 200px !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+.amcharts-axis-label tspan {
+  white-space: normal !important;
+}
+
+</style>

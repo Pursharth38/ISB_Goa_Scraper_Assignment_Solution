@@ -1,0 +1,336 @@
+{
+  "year": 2026,
+  "month": 3,
+  "month_name": "March",
+  "state": "GOA",
+  "state_code": "30",
+  "district": "SOUTH GOA",
+  "district_code": "586",
+  "fps_id": "158600300025",
+  "fps_name": "THE MORMUGAO WATERFRONT WORKERS CONSUMERS CO OP STY LTD-8 FPS",
+  "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158600300025",
+  "scraped_at_utc": "2026-08-04T21:40:25+00:00",
+  "summary_cards": {
+    "Total e-Transaction": {
+      "raw": "173",
+      "value": 173
+    },
+    "Aadhaar Authenticated": {
+      "raw": "173",
+      "value": 173
+    },
+    "Other Mode Authenticated": {
+      "raw": "0",
+      "value": 0
+    },
+    "Non-Authenticated": {
+      "raw": "0",
+      "value": 0
+    }
+  },
+  "tables": {
+    "number_of_transaction": {
+      "columns": [
+        "NFSA Ration Card Type",
+        "Regular",
+        "Intra State",
+        "Inter State",
+        "Total"
+      ],
+      "rows": {
+        "Priority Household(PHH)": {
+          "Regular": {
+            "raw": "139",
+            "value": 139
+          },
+          "Intra State": {
+            "raw": "6",
+            "value": 6
+          },
+          "Inter State": {
+            "raw": "22",
+            "value": 22
+          },
+          "Total": {
+            "raw": "167",
+            "value": 167
+          }
+        },
+        "Antyodaya Anna Yojana (AAY)": {
+          "Regular": {
+            "raw": "1",
+            "value": 1
+          },
+          "Intra State": {
+            "raw": "1",
+            "value": 1
+          },
+          "Inter State": {
+            "raw": "4",
+            "value": 4
+          },
+          "Total": {
+            "raw": "6",
+            "value": 6
+          }
+        }
+      }
+    },
+    "number_of_transacted_ration_card": {
+      "columns": [
+        "NFSA Ration Card Type",
+        "Regular",
+        "Intra State",
+        "Inter State",
+        "Total"
+      ],
+      "rows": {
+        "Priority Household (PHH)": {
+          "Regular": {
+            "raw": "139",
+            "value": 139
+          },
+          "Intra State": {
+            "raw": "6",
+            "value": 6
+          },
+          "Inter State": {
+            "raw": "22",
+            "value": 22
+          },
+          "Total": {
+            "raw": "167",
+            "value": 167
+          }
+        },
+        "Antyodaya Anna Yojana (AAY)": {
+          "Regular": {
+            "raw": "1",
+            "value": 1
+          },
+          "Intra State": {
+            "raw": "1",
+            "value": 1
+          },
+          "Inter State": {
+            "raw": "4",
+            "value": 4
+          },
+          "Total": {
+            "raw": "6",
+            "value": 6
+          }
+        }
+      }
+    },
+    "distributed_quantity_kg": {
+      "columns": [
+        "Commodity",
+        "Regular Txn",
+        "Intra state Txn",
+        "Inter State Txn",
+        "Total"
+      ],
+      "rows": {
+        "Wheat": {
+          "Regular Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Intra state Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Inter State Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Total": {
+            "raw": "0.0",
+            "value": 0.0
+          }
+        },
+        "Fortified Rice": {
+          "Regular Txn": {
+            "raw": "2.513",
+            "value": 2.513
+          },
+          "Intra state Txn": {
+            "raw": "0.175",
+            "value": 0.175
+          },
+          "Inter State Txn": {
+            "raw": "0.557",
+            "value": 0.557
+          },
+          "Total": {
+            "raw": "3.245",
+            "value": 3.245
+          }
+        },
+        "Rice": {
+          "Regular Txn": {
+            "raw": "2,513",
+            "value": 2513
+          },
+          "Intra state Txn": {
+            "raw": "175",
+            "value": 175
+          },
+          "Inter State Txn": {
+            "raw": "557",
+            "value": 557
+          },
+          "Total": {
+            "raw": "3245.0",
+            "value": 3245.0
+          }
+        },
+        "Coarse Grains": {
+          "Regular Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Intra state Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Inter State Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Total": {
+            "raw": "0.0",
+            "value": 0.0
+          }
+        },
+        "Barley": {
+          "Regular Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Intra state Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Inter State Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Total": {
+            "raw": "0.0",
+            "value": 0.0
+          }
+        },
+        "Bajra": {
+          "Regular Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Intra state Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Inter State Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Total": {
+            "raw": "0.0",
+            "value": 0.0
+          }
+        },
+        "Maize": {
+          "Regular Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Intra state Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Inter State Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Total": {
+            "raw": "0.0",
+            "value": 0.0
+          }
+        },
+        "Jowar": {
+          "Regular Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Intra state Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Inter State Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Total": {
+            "raw": "0.0",
+            "value": 0.0
+          }
+        },
+        "Ragi": {
+          "Regular Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Intra state Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Inter State Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Total": {
+            "raw": "0.0",
+            "value": 0.0
+          }
+        },
+        "Kodo": {
+          "Regular Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Intra state Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Inter State Txn": {
+            "raw": "0",
+            "value": 0
+          },
+          "Total": {
+            "raw": "0.0",
+            "value": 0.0
+          }
+        },
+        "Total": {
+          "Regular Txn": {
+            "raw": "2,513",
+            "value": 2513
+          },
+          "Intra state Txn": {
+            "raw": "175",
+            "value": 175
+          },
+          "Inter State Txn": {
+            "raw": "557",
+            "value": 557
+          },
+          "Total": {
+            "raw": "3245.0",
+            "value": 3245.0
+          }
+        }
+      }
+    }
+  }
+}

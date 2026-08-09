@@ -1,0 +1,212 @@
+URL: https://impds.nic.in/sale/liveStatesAjax
+STATUS: 200
+TIME: 2026-08-04 04:40:20.076832
+======================================================================
+
+
+
+
+	<ol style="margin-bottom: 0px;">
+		
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('35')">ANDAMAN AND NICOBAR ISLANDS</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('28')">ANDHRA PRADESH</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('12')">ARUNACHAL PRADESH</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('18')">ASSAM</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('10')">BIHAR</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('22')">CHHATTISGARH</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('38')">DADAR & NAGAR HAVELI & DAMAN & DIU</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('07')">DELHI</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('30')">GOA</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('24')">GUJARAT</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('06')">HARYANA</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('02')">HIMACHAL PRADESH</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('01')">JAMMU AND KASHMIR</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('20')">JHARKHAND</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('29')">KARNATAKA</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('32')">KERALA</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('37')">LADAKH</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('31')">LAKSHADWEEP</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('23')">MADHYA PRADESH</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('27')">MAHARASHTRA</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('17')">MEGHALAYA</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('15')">MIZORAM</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('13')">NAGALAND</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('21')">ODISHA</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('03')">PUNJAB</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('08')">RAJASTHAN</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('11')">SIKKIM</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('33')">TAMIL NADU</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('36')">TELANGANA</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('16')">TRIPURA</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('09')">UTTAR PRADESH</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('05')">UTTARAKHAND</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('19')">WEST BENGAL</a></span></li>
+			
+					
+	
+	</ol>
+
+
+	

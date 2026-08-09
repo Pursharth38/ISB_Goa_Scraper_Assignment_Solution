@@ -1,0 +1,1887 @@
+URL: https://impds.nic.in/sale/fpsByCountryAjax2?stateCode=30
+STATUS: 200
+TIME: 2026-08-04 04:47:33.340595
+======================================================================
+
+
+        <script src="assets/plugins/bootstrap/js/jquery.min.js" type="text/javascript"></script>  
+	
+<style>
+.activator {
+	cursor: pointer;
+}
+
+.activator.open, .activator:hover {
+	background: #ccf;
+}
+
+.activator.open .fa-plus, .activator+.hidden-row {
+	display: none;
+}
+
+.activator.open+.hidden-row {
+	display: table-row;
+}
+
+.activator.open .fa-minus {
+	display: inline-block;
+}
+.swal-button {
+  background-color: #0F548C !important; /* Dark enough for contrast */
+  color: #FFFFFF !important;           /* White text */
+}
+.fa-hand-o-left:focus  {
+  outline: 3px solid #005fcc !important;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 767px) {
+    .infi_count, .infi_count1, .infi_count2, .infi_count3, .percent, .atoz {
+        position: absolute;
+    }
+    
+ .top_circle_icons {
+        top: 8px;
+    }  
+    }
+    
+</style>	
+<style>
+.table-responsive:focus-within {
+  overflow: visible;
+}
+.focus-table [tabindex="0"]:focus,
+.focus-table th:focus,
+.focus-table td:focus {
+  outline: 3px solid #005fcc !important;
+  outline-offset: 2px !important;
+
+}
+.status2:focus{
+  outline: 3px solid #005fcc !important;
+  outline-offset: 2px !important;
+}
+
+</style>
+<script>
+(() => {
+  const selTbl = '.focus-table';
+
+  const makeFocusable = () => {
+    document.querySelectorAll(selTbl + ' th, ' + selTbl + ' td').forEach(c => {
+      if (!c.hasAttribute('tabindex')) c.tabIndex = 0;
+      c.addEventListener('focus', () => c.classList.add('cell-focus'));
+      c.addEventListener('blur', () => c.classList.remove('cell-focus'));
+    });
+  };
+
+  const observer = new MutationObserver(() => makeFocusable());
+  observer.observe(document.body, { childList: true, subtree: true });
+  makeFocusable();
+})();
+
+</script>
+<!-- currency converter -->
+<script>
+			$(function() {
+				var convertText = $(".convert");
+				for(var i=0; i<convertText.length; i++){
+					$(".convert").eq(i).text(convert($(".convert").eq(i).text()));
+				}
+				function convert(text){
+					var x = text;
+					//var x = $('#result1').text();
+					x=x.toString();
+					x = x.replace(/\,/g, '');
+					var afterPoint = '';
+					if(x.indexOf('.') > 0)
+					afterPoint = x.substring(x.indexOf('.'),x.length);
+					x = Math.floor(x);
+					x=x.toString();
+					var lastThree = x.substring(x.length-3);
+					var otherNumbers = x.substring(0,x.length-3);
+					if(otherNumbers != '')
+						lastThree = ',' + lastThree;
+					var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + afterPoint;
+					return res;
+					//document.getElementById('result1').innerHTML = res;
+				}
+			});
+		
+</script>	
+		
+	
+		
+		
+<script>
+
+function livefpsdetails(fpsid) {
+	$(".loader").show();
+	
+	jQuery.ajax({
+		type : "GET",
+		url : "/sale/livedashboardtxndatafps",
+		data : { "fpsid" :fpsid},
+		beforeSend : function() {
+
+		},
+		success : function(result) {
+	    	  $(".loader").hide();
+				
+			$("#livefpsdetailId").html(result);
+		},
+		complete : function() {
+			$("#livefpsdetailId").show();
+			//$("#stateDefaultDivId").hide();
+			
+
+		}
+	});
+    
+	return false; 
+} 
+ 
+function liveFpsdata(stateId,districtId) {
+	 var url = "liveFpsAjax";
+	 $(".loader").show();
+	jQuery.ajax({
+		type : "GET",
+		url : url,
+		data : { "stateCode" :stateId,"districtCode" :districtId},
+		beforeSend : function() {
+
+		},
+		success : function(result) {
+			$(".loader").hide();
+			$("#liveDivId").html(result);
+		},
+		complete : function() {
+			$("#liveDivId").show();
+			//$("#stateDefaultDivId").hide();
+			
+
+		}
+	});
+
+	return false; 
+}
+
+function stateData(fpsId) {
+  
+	 var url = "fpsByCountryAjax";
+	 
+	
+	 $(".loader").show(); 
+		jQuery.ajax({
+			type : "GET",
+			url : url,
+			data : { "stateCode" :fpsId},
+			beforeSend : function() {
+
+			},
+			success : function(result) {
+				$(".loader").hide();
+				
+				$("#stateDivId").html(result);
+
+			},
+			complete : function() {
+		
+				$("#stateDivId").show();
+				
+				$("#stateDefaultDivId").hide();
+				
+
+			}
+		});
+}
+
+
+function backData(districtId) {
+	 var url = "districtByCountryAjax";
+
+	 $(".loader").show();
+		jQuery.ajax({
+			type : "GET",
+			url : url,
+			data : { "stateCode" :districtId},
+			beforeSend : function() {
+
+			},
+			success : function(result) {
+				 $(".loader").hide();
+				$("#stateDivId").html(result);
+
+			},
+			complete : function() {
+		
+				$("#stateDivId").show();
+				$("#stateDefaultDivId").hide();
+				
+
+			}
+		});
+}
+
+</script>
+<script>
+$(function () {
+	  var $table = $("table");
+	  $table.find(".activator").click(function () {
+	  $table.find(".customRow").toggleClass("d-none");
+	  });
+	});
+$(document).ready(function (e) {
+    $('#statecode').on('change', function () {
+        ajaxCallDistrictChange();
+    });
+
+    $(".menu-toggle").click(function () {
+        const $btn = $(this);
+        const panelId = $btn.attr("aria-controls");
+        const $panel = $("#" + panelId);
+
+        // Toggle panel visibility
+        $panel.toggle();
+
+        // Toggle aria-expanded
+        const expanded = $btn.attr("aria-expanded") === "true";
+        $btn.attr("aria-expanded", !expanded);
+
+        // Toggle icons
+        $btn.find("i").toggleClass("d-none");
+    });
+});
+</script>
+<div class="container-fluid main-containt">
+	<section class="padding-bottom-10" style="background:#f9f9f9;">
+		  	<div class="row">
+				<div class="col-md-3 padding-top-10" >
+				  			<div>
+									<div class="state_count btn-head btn btn-3d btn-lg padding-10">
+										<table style="width: 100%; margin: 0px; padding: 0px;">
+											<tr>
+												<td><h4 style="margin: 0px; color: #fff; text-align: left;" class="m_menu" key="d_list">FPS LIST</h4></td>
+												<td><span class="dfso_coun counter font-lato pull-right">
+												240
+												</span></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+						
+						<div style="max-height: 570px; overflow-y: auto;" class="margin-top-10">
+							
+									<ul class="menu" style="width:99.8%">
+					          			
+					        				 
+												
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100001'); ">158500100001&nbsp;:&nbsp;SMT.SANNA SANJAY PADTE-83 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100002'); ">158500100002&nbsp;:&nbsp;M/S P S KAREKAR-26 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100005'); ">158500100005&nbsp;:&nbsp;ARPORA NAGOA V K S S STY LTD-39 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100006'); ">158500100006&nbsp;:&nbsp;ASHOK P SHIRODKAR-103 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100007'); ">158500100007&nbsp;:&nbsp;ASHOK G DHARGALKAR-94 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100008'); ">158500100008&nbsp;:&nbsp;SANTOSH NAGESH PRABHU-74 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100009'); ">158500100009&nbsp;:&nbsp;THE MAPUSA CONSUMER COOP STY-1& 2 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100011'); ">158500100011&nbsp;:&nbsp;SUBHASH DHARGALKAR-62 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100012'); ">158500100012&nbsp;:&nbsp;SAYUKTA B. KESARKAR-105 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100013'); ">158500100013&nbsp;:&nbsp;PANDURANG V GOVEKAR-85 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100014'); ">158500100014&nbsp;:&nbsp;PRADEEP P MISHAL-77 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100015'); ">158500100015&nbsp;:&nbsp;GOKULDAS FAIR PRICE SHOP-111 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100016'); ">158500100016&nbsp;:&nbsp;VIMAL R AZGAONKAR-67 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100017'); ">158500100017&nbsp;:&nbsp;RANJANA C NAIK-109 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100019'); ">158500100019&nbsp;:&nbsp;Dhond Shop-57 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100020'); ">158500100020&nbsp;:&nbsp;M/S PANDHARI PANGAM-51 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100021'); ">158500100021&nbsp;:&nbsp;SADANAND S LOTLIKAR-32 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100022'); ">158500100022&nbsp;:&nbsp;SURESH P SAWANT-91 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100023'); ">158500100023&nbsp;:&nbsp;DAYANAND KENKRE-33 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100024'); ">158500100024&nbsp;:&nbsp;DEEPAK ATCHUT NAIK-101 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100025'); ">158500100025&nbsp;:&nbsp;SHRIKRISHNA POKHRE-116 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100026'); ">158500100026&nbsp;:&nbsp;DAYANAND S GADEKAR-110 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100027'); ">158500100027&nbsp;:&nbsp;HIRABAI TRIVIKRAM JOSHI-53 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100028'); ">158500100028&nbsp;:&nbsp;PURSHOTTAM A BANDODKAR-59 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100029'); ">158500100029&nbsp;:&nbsp;NARLISO LOBO-58 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100030'); ">158500100030&nbsp;:&nbsp;SUNITA V UMBRAXAR-100 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100031'); ">158500100031&nbsp;:&nbsp;YOGESHWAR GANPAT TAMONKAR-49 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100032'); ">158500100032&nbsp;:&nbsp;CHANDRASHEKHAR Y MORE-102 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100033'); ">158500100033&nbsp;:&nbsp;RAMESH G TAMANKAR-64 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100034'); ">158500100034&nbsp;:&nbsp;SUNITA KASKAR-95 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100035'); ">158500100035&nbsp;:&nbsp;GUIRIM SANGOLDA M.P. CO-OP SERVICE SOCIETY LTD-15 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100036'); ">158500100036&nbsp;:&nbsp;GUIRIM SANGOLDA M.P.CO-OP SERVICE SOCIETY LTD-13 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100037'); ">158500100037&nbsp;:&nbsp;GUIRIM SANGOLDA M.P. CO-OP SERVICE SOCIETY LTD-14 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100038'); ">158500100038&nbsp;:&nbsp;POROB FAIR PRICE SHOP-40 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100039'); ">158500100039&nbsp;:&nbsp;SUMATI C KALANGUTKAR-79 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100040'); ">158500100040&nbsp;:&nbsp;SHRI DEVANAND V SHIRODKAR-108 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100041'); ">158500100041&nbsp;:&nbsp;SHANKER .V. PRABHU KHORJUNVKAR-88 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100042'); ">158500100042&nbsp;:&nbsp;BHAGIRATHI-117 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100043'); ">158500100043&nbsp;:&nbsp;DULER V.K.S SOCIETY-6 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100044'); ">158500100044&nbsp;:&nbsp;PRAFULLA P. KANDOLKAR-45 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100046'); ">158500100046&nbsp;:&nbsp;SANGEETA FAIR PRICE SHOP-114 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100047'); ">158500100047&nbsp;:&nbsp;ALINI A BHONSLE-47 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100048'); ">158500100048&nbsp;:&nbsp;PRAKASH M COULEKAR-75 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100049'); ">158500100049&nbsp;:&nbsp;ROHIDAS G PARAB-99 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100050'); ">158500100050&nbsp;:&nbsp;SHANTA TRIVIKRM JOSHI-90 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100051'); ">158500100051&nbsp;:&nbsp;SMT. SUJATA V. NAIK-19 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100054'); ">158500100054&nbsp;:&nbsp;GAJANAN K PRABHU-46 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100055'); ">158500100055&nbsp;:&nbsp;SANGEETA S PRABHU-80 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100056'); ">158500100056&nbsp;:&nbsp;KASHINATH S SAWAL-61 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100317'); ">158500100317&nbsp;:&nbsp;RAMTIRTH NAGVEKAR-29 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100318'); ">158500100318&nbsp;:&nbsp;VITHAL C THALI-4 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100319'); ">158500100319&nbsp;:&nbsp;DHARMA G TAMANKAR-52 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100320'); ">158500100320&nbsp;:&nbsp;SHRIKANT U NAIK-50 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100321'); ">158500100321&nbsp;:&nbsp;BASTORA UCASAIM STY-17 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100323'); ">158500100323&nbsp;:&nbsp;REGINALD B LOBO-107 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100324'); ">158500100324&nbsp;:&nbsp;PRATIMA N VARKHANDKAR-113 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100325'); ">158500100325&nbsp;:&nbsp;ANAND D KAMAT-48 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100326'); ">158500100326&nbsp;:&nbsp;SHRI SOMNATH V HALARNKAR</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100327'); ">158500100327&nbsp;:&nbsp;VISHWANATH VOLVAIKAR-69 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100328'); ">158500100328&nbsp;:&nbsp;AMIT CHODANKAR-112 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100329'); ">158500100329&nbsp;:&nbsp;N.D.KAMBLI-71 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100330'); ">158500100330&nbsp;:&nbsp;AGNELO LOBO-78 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100331'); ">158500100331&nbsp;:&nbsp;SHAILA B VAIGANKAR-72 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100333'); ">158500100333&nbsp;:&nbsp;Shaliesh S. Mahambrey -93 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100334'); ">158500100334&nbsp;:&nbsp;NETAJI R DHARGALKAR-97 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100335'); ">158500100335&nbsp;:&nbsp;S.V MALIK-92 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100336'); ">158500100336&nbsp;:&nbsp;THE REVORA NADORA VKKS STY LTD-60 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100337'); ">158500100337&nbsp;:&nbsp;SAKHARAM S FALARI-9 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100338'); ">158500100338&nbsp;:&nbsp;SITABAI R NAIK-41 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100339'); ">158500100339&nbsp;:&nbsp;AMIR SUDAN SHETYE-106 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100340'); ">158500100340&nbsp;:&nbsp;BHIKU Y VAIGANKAR-44 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100341'); ">158500100341&nbsp;:&nbsp;ANAND B BHAIDKAR-7 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100342'); ">158500100342&nbsp;:&nbsp;Jeixri Shyam Naik -21 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100343'); ">158500100343&nbsp;:&nbsp;SMT. C. SIMEPURUSHKAR-65 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100344'); ">158500100344&nbsp;:&nbsp;FONDU U SHIRODKAR-98 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100345'); ">158500100345&nbsp;:&nbsp;DARIN JULIAN LOBO-18 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100348'); ">158500100348&nbsp;:&nbsp;ANNA CHRISTINA ALVARES-118 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100349'); ">158500100349&nbsp;:&nbsp;PRACHI PREMNATH MAULINGCAR-55 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100351'); ">158500100351&nbsp;:&nbsp;PRANAY S. NAIK KALANGUTKAR  - 84 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100352'); ">158500100352&nbsp;:&nbsp;ZICO J. SEQUEIRA- 36 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100356'); ">158500100356&nbsp;:&nbsp;APARNA V. KAMBLI - 68 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100357'); ">158500100357&nbsp;:&nbsp;KISHORI D. SHINDE FPS-10</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500100369'); ">158500100369&nbsp;:&nbsp;PANKAJ N. DHARGALKAR-119 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500100370'); ">158500100370&nbsp;:&nbsp;SULOCHANA KALANGUTKAR-120 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500100371'); ">158500100371&nbsp;:&nbsp;SNEHAL NARAYAN SALGAONKAR</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200002'); ">158500200002&nbsp;:&nbsp;PURSHOTTAM C NAIK-5 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200003'); ">158500200003&nbsp;:&nbsp;MULGAO SHIRGAO ADVALPAL V.K.S.S.SOCIETY LTD-6 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200004'); ">158500200004&nbsp;:&nbsp;PILIGAO V.K.S.STY LTD-12 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200005'); ">158500200005&nbsp;:&nbsp;BICHOLIM VKSS SOCIETY LTD-8 & 11 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200006'); ">158500200006&nbsp;:&nbsp;BICHOLIM VKSS SOC LTD-9 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200007'); ">158500200007&nbsp;:&nbsp;KALYAN CONSUMERS CO-OPERATIVE SOCIETY LTD-10 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200009'); ">158500200009&nbsp;:&nbsp;KARAPUR SARVAN V K STY-16 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200010'); ">158500200010&nbsp;:&nbsp;MAHARASTRA V.K.S SOCIETY LTD-17 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200011'); ">158500200011&nbsp;:&nbsp;NAVELIM VKSS STY LTD-20 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200012'); ">158500200012&nbsp;:&nbsp;SURLA KOTHAMBI V.K.S.S. STY LTD.-23 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200013'); ">158500200013&nbsp;:&nbsp;MAHARASTRA  V.K.S.SOCIETY -25 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200014'); ">158500200014&nbsp;:&nbsp;VISHNU RAMCHANDRA PARAB-29 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200015'); ">158500200015&nbsp;:&nbsp;SANTOSH K GADEKAR-30 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200016'); ">158500200016&nbsp;:&nbsp;TUKARAM RAGHOBA GAONKAR-33 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200018'); ">158500200018&nbsp;:&nbsp;SMT. NAFISA IMRAN SHAIKH-35 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200019'); ">158500200019&nbsp;:&nbsp;SHAMBHU VAMAN FADTE-36 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200020'); ">158500200020&nbsp;:&nbsp;MOHAN GANESH TARI-37 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200021'); ">158500200021&nbsp;:&nbsp;VELGUEM MAH  CONSUMER CO-OP SOCIETY LTD-38 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200022'); ">158500200022&nbsp;:&nbsp;DEEPAK P.N KUMBHARJUVEKAR-40 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200023'); ">158500200023&nbsp;:&nbsp;SANJAY S ARONDEKAR-43 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200024'); ">158500200024&nbsp;:&nbsp;Sunil V Govekar-45 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200171'); ">158500200171&nbsp;:&nbsp;SMT SHILPA UMESH RAUT-4 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200172'); ">158500200172&nbsp;:&nbsp;VAN GROUP V.K.S.STY-7 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200173'); ">158500200173&nbsp;:&nbsp;KRISHNA R. SATARDEKAR-18 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200174'); ">158500200174&nbsp;:&nbsp;MAHALAXMI V.K.S.STY-19 & 32 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200175'); ">158500200175&nbsp;:&nbsp;SAJRO U PARAB-22 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200176'); ">158500200176&nbsp;:&nbsp;NAVDURGA V K S STY-24 & 26 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200177'); ">158500200177&nbsp;:&nbsp;SWETA PRABHUGAONKAR-31 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200178'); ">158500200178&nbsp;:&nbsp;KALYAN CONSUMERS CO-OPERATIVE SOCIETY LTD-34 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200181'); ">158500200181&nbsp;:&nbsp;NAVDURGA V K S STY-42 & 28 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200182'); ">158500200182&nbsp;:&nbsp;SANDHYA G KASAR-44 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200183'); ">158500200183&nbsp;:&nbsp;ADVALPAL V.K.S STY-1 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200184'); ">158500200184&nbsp;:&nbsp;MAHARASHTRA V K S STY-15 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200185'); ">158500200185&nbsp;:&nbsp;NARVA V K S STY-13 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200187'); ">158500200187&nbsp;:&nbsp;RAHUL RAMA NAIK- 46 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200188'); ">158500200188&nbsp;:&nbsp;KASARPAL V K S STY-2 & 3 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200189'); ">158500200189&nbsp;:&nbsp;VITHOBA L GHADI-39 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500200190'); ">158500200190&nbsp;:&nbsp;TULSHIDAS K GAONKAR-41 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500200191'); ">158500200191&nbsp;:&nbsp;DIGVETTA D KARBOTHKAR-14 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500200192'); ">158500200192&nbsp;:&nbsp;MAHALAXMI RAVALNATH MULTIPURPOSE CO-OPERATIVE SOCIETY LTD</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300002'); ">158500300002&nbsp;:&nbsp;GOVIND P SHETGAONKAR-3 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300003'); ">158500300003&nbsp;:&nbsp;KRISHNA S.SHETGAONKAR-5 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300004'); ">158500300004&nbsp;:&nbsp;M/S LAXMAN SHAMBA NAIK-6 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300005'); ">158500300005&nbsp;:&nbsp;SHRI BAPTISTA D'SOUZA-7 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300006'); ">158500300006&nbsp;:&nbsp;SADANAND D PALNI-8 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300008'); ">158500300008&nbsp;:&nbsp;ABHIJIT ULHAS NARVEKAR-10 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300010'); ">158500300010&nbsp;:&nbsp;NANDAKUMAR SHET-12 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300011'); ">158500300011&nbsp;:&nbsp;SHRI ASHOK RAJARAM KAMAT-13 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300012'); ">158500300012&nbsp;:&nbsp;PRAKASH B NAIK-14 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300013'); ">158500300013&nbsp;:&nbsp;SUHASINI KASHIRAM KORGAONKAR-15 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300014'); ">158500300014&nbsp;:&nbsp;GAUTAMI R MANDREKAR-49 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300016'); ">158500300016&nbsp;:&nbsp;SAI PRASAD-19 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300017'); ">158500300017&nbsp;:&nbsp;Saiprasad Stores-20 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300018'); ">158500300018&nbsp;:&nbsp;MANOHAR DAJI NAIK-21 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300019'); ">158500300019&nbsp;:&nbsp;VISHNU G MAHALE-22 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300020'); ">158500300020&nbsp;:&nbsp;Atmaram R. Parab-23 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300026'); ">158500300026&nbsp;:&nbsp;ARUN S SAWANT-32 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300027'); ">158500300027&nbsp;:&nbsp;GADEKAR STORES-33 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300028'); ">158500300028&nbsp;:&nbsp;S.B.SAWANT-36 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300029'); ">158500300029&nbsp;:&nbsp;G.V.SUBHAJI-37 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300030'); ">158500300030&nbsp;:&nbsp;PEDNE TALUKA FARMERS SERVICE COOP STY LTD.-38 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300031'); ">158500300031&nbsp;:&nbsp;SMT SUNITA SHRIRAM BUGDE-40 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300033'); ">158500300033&nbsp;:&nbsp;ANKUSH SHYAM SAWANT-42 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300034'); ">158500300034&nbsp;:&nbsp;GURUNATH VASUDEV TALAVANEKAR-45 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300036'); ">158500300036&nbsp;:&nbsp;MULVIR STORE-48 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300037'); ">158500300037&nbsp;:&nbsp;PEDNE TALUKA FARMERS SERVICE CO-OP SOCIETY LTD-25 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300038'); ">158500300038&nbsp;:&nbsp;MR.UTTAM K KOTKAR-2 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300132'); ">158500300132&nbsp;:&nbsp;ULHAS R NAIK-17 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300133'); ">158500300133&nbsp;:&nbsp;PEDNE TALUKA FARMERS SERVICE CO.OP.SOCIETY-24 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300134'); ">158500300134&nbsp;:&nbsp;PERNEM TALUKA FARMER CO.OP.STY-26 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300135'); ">158500300135&nbsp;:&nbsp;PERNEM TALUKA FARMER CO.OP.STY.LTD.-27 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300136'); ">158500300136&nbsp;:&nbsp;PERNEM TALUKA FARMER CO.OP.STY.LTD.-28 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300137'); ">158500300137&nbsp;:&nbsp;PERNEM TALUKA FARMER CO.OP.STY.LTD.-29 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300138'); ">158500300138&nbsp;:&nbsp;PERNEM TALUKA FARMER CO.OP.STY.LTD.-31 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300141'); ">158500300141&nbsp;:&nbsp;PERNEM TALUKA FARMER CO.OP.STY.LTD.-41 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300143'); ">158500300143&nbsp;:&nbsp;J.R DESHPRABHU-1 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300144'); ">158500300144&nbsp;:&nbsp;G.J SHIRGAONKAR-39 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300146'); ">158500300146&nbsp;:&nbsp;PEDNE TALUKA FARMERS SERVICE CO-OP STY-18 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300147'); ">158500300147&nbsp;:&nbsp;MR. SHAILA GAWAS-11 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300148'); ">158500300148&nbsp;:&nbsp;ASHISH LAXMAN KALANGUTKAR-9 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500300149'); ">158500300149&nbsp;:&nbsp;RADHIKA R. KANOLKAR-46 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500300150'); ">158500300150&nbsp;:&nbsp;PERNEM TALUKA FARMER CO.OP.STY.LTD AROBA-35 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500300157'); ">158500300157&nbsp;:&nbsp;SHRUTI SADGURU THAKUR</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500500002'); ">158500500002&nbsp;:&nbsp;MALINI K GAWAS-26 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500500003'); ">158500500003&nbsp;:&nbsp;DEEPA D KALANGUTKAR-24 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500500004'); ">158500500004&nbsp;:&nbsp;CHANDRAKANT JAIDEV PANGAM-20 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500500005'); ">158500500005&nbsp;:&nbsp;KASHINATH SAWANT-19 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500500006'); ">158500500006&nbsp;:&nbsp;BABAJI DAMODAR MAJIK-18 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500500007'); ">158500500007&nbsp;:&nbsp;KASHINATH Y SAWANT-17 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500500008'); ">158500500008&nbsp;:&nbsp;SARITA J DESAI-16 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500500009'); ">158500500009&nbsp;:&nbsp;SMT. ANITA ANANDRAO RANE-25 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500500010'); ">158500500010&nbsp;:&nbsp;GAWANE G V K S STY-14 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500500011'); ">158500500011&nbsp;:&nbsp;SHAMSUNDER K SHIRODKAR-23 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500500012'); ">158500500012&nbsp;:&nbsp;SAGAR M SHIRODKAR-11 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500500013'); ">158500500013&nbsp;:&nbsp;SATTARI TALUKA CO-OP STY-10 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500500014'); ">158500500014&nbsp;:&nbsp;DEVDATT S WADKAR-9 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500500015'); ">158500500015&nbsp;:&nbsp;SUNITA SURESH NAIK-8 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500500016'); ">158500500016&nbsp;:&nbsp;SIDDESH M. SAWAIKAR-7 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500500017'); ">158500500017&nbsp;:&nbsp;PREMNATH G DALVI-5 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500500019'); ">158500500019&nbsp;:&nbsp;LAXIMAN VAMAN DALVI - 4 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500500020'); ">158500500020&nbsp;:&nbsp;NAGARGAO GROUP VIKAS CREDIT STY-3 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500500022'); ">158500500022&nbsp;:&nbsp;M/S SUDESH A TELI-1 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500500099'); ">158500500099&nbsp;:&nbsp;SATTARI TALUKA FARMERS CO OP STY -2 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500500100'); ">158500500100&nbsp;:&nbsp;SATTARI TALUKA CO-OP STY-15 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500500104'); ">158500500104&nbsp;:&nbsp;SHRI. DEEPAK PARMESHMAR RANE-6 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500500105'); ">158500500105&nbsp;:&nbsp;SMT. MANSI MAHADEV GAWAS-13 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500500107'); ">158500500107&nbsp;:&nbsp;SHRI. SHAM JOTO PAVANE-21 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600002'); ">158500600002&nbsp;:&nbsp;JANATA CONSUMER CO OP STY-1 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600003'); ">158500600003&nbsp;:&nbsp;GURUDAS YASHWANT SHET-2 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600005'); ">158500600005&nbsp;:&nbsp;Smita Ankush Naik-5 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600006'); ">158500600006&nbsp;:&nbsp;GURUDAS YASHWANT SHET-6 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600024'); ">158500600024&nbsp;:&nbsp;SIDHARTH K. SHETVARGAONKAR-24 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600037'); ">158500600037&nbsp;:&nbsp;RAJESH STORE-38 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600046'); ">158500600046&nbsp;:&nbsp;PRAKASH STORES-54 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600047'); ">158500600047&nbsp;:&nbsp;PREMAKANT A NAIK-57 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600053'); ">158500600053&nbsp;:&nbsp;MAHESH A CHODANKAR-69 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600063'); ">158500600063&nbsp;:&nbsp;SUJAY VASANT NAIK-77 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600065'); ">158500600065&nbsp;:&nbsp;SHRI GANESH-66 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600066'); ">158500600066&nbsp;:&nbsp;SUBIJ DATTARAM PARULEKAR-14 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600067'); ">158500600067&nbsp;:&nbsp;PUSHPA R NAIK-18 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600068'); ">158500600068&nbsp;:&nbsp;A N GOVENKAR-21 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600069'); ">158500600069&nbsp;:&nbsp;SURESH V BORKAR-26 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600070'); ">158500600070&nbsp;:&nbsp;PRIYANKA PANDURANG SHET-27 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600071'); ">158500600071&nbsp;:&nbsp;SHETKARI ADARSH V K S S STY-29 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600072'); ">158500600072&nbsp;:&nbsp;P P KARAPURKAR-35 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600073'); ">158500600073&nbsp;:&nbsp;Vivina Vinod Madkaikar -36 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600074'); ">158500600074&nbsp;:&nbsp;VRUNDA NAIK-42 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600075'); ">158500600075&nbsp;:&nbsp;SHRI. PRAJAY ALIAS RAMRAI P. NAIK-40 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600076'); ">158500600076&nbsp;:&nbsp;NAMDEV K .NAIK-49 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600077'); ">158500600077&nbsp;:&nbsp;RAMITA ASHOK SHIRODKAR-50 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600078'); ">158500600078&nbsp;:&nbsp;GOMATI P. NAIK-60 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600079'); ">158500600079&nbsp;:&nbsp;JUDITH VAZ-64 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600080'); ">158500600080&nbsp;:&nbsp;PIEDADE SERVICE CO OP SOCIETY PVT LTD-22 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600081'); ">158500600081&nbsp;:&nbsp;VENKATESH A SAWANT-23 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600082'); ">158500600082&nbsp;:&nbsp;AJAY A PAI-28 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600083'); ">158500600083&nbsp;:&nbsp;Smt. Roshan V. Natekar-37 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600084'); ">158500600084&nbsp;:&nbsp;DAMODAR R HOBLE-4 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600086'); ">158500600086&nbsp;:&nbsp;REENA PILANKAR-8 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600087'); ">158500600087&nbsp;:&nbsp;JANATA CONSUMER CO OP STY-9 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600088'); ">158500600088&nbsp;:&nbsp;KRISHNA V KUDNEKAR-10 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600090'); ">158500600090&nbsp;:&nbsp;LAVU RAGHUVIR HOBLE-15 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600091'); ">158500600091&nbsp;:&nbsp;RUKMA R.P MHAMBREY-13 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600092'); ">158500600092&nbsp;:&nbsp;RADHAKRISHNA STORES-16 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600093'); ">158500600093&nbsp;:&nbsp;SANDEEP S BHONSULE-17 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600094'); ">158500600094&nbsp;:&nbsp;NILKANTH P PALEKAR-19 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600095'); ">158500600095&nbsp;:&nbsp;VASUDEV V KAMAT-30 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600096'); ">158500600096&nbsp;:&nbsp;NARESH V SHIRODKAR-31 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600097'); ">158500600097&nbsp;:&nbsp;R M DHOND-32 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600098'); ">158500600098&nbsp;:&nbsp;GULABI PRABHAKAR NAIK-33 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600100'); ">158500600100&nbsp;:&nbsp;R K BANDODKAR-41 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600102'); ">158500600102&nbsp;:&nbsp;S S VAINGANKAR-53 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600105'); ">158500600105&nbsp;:&nbsp;PRAKASH U NAIK-75 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color0"><a href="#" onclick="stateData('158500600107'); ">158500600107&nbsp;:&nbsp;AQSHI V K S STY-20 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color1"><a href="#" onclick="stateData('158500600549'); ">158500600549&nbsp;:&nbsp;ULHAS P PALEKAR-59 FPS</a>
+													</li> 
+											  	
+												
+													<li class="menu_list list_color2"><a href="#" onclick="stateData('158500600551'); ">158500600551&nbsp;:&nbsp;SHELLY FERNANDES-25 FPS</a>
+													</li> 
+											  	
+							  		
+											
+											
+										 
+									</ul>
+		
+						</div>
+		 		 </div>
+		  <div class="col-md-7">
+		   		<div class="dash-row1 margin-top-10">
+		  			<div class="metro-nav">
+							<div class="metro-nav-block nav-block-red block-4">
+	                         <a data-original-title="" href="#" >
+	                         
+	                          <div class="status m_menu" key="state" style="text-decoration: underline;">
+	                            
+								    GOA<br/>
+								</div>
+	                            <div class="info atoz"><span class="counter1 counter_num1" style="display: inline-block;"></span></div>
+	                         	<div class="top_circle_icons top_circle_bg1">
+	                           	 <img class="pic_icon1" src="images/india-map.png">
+	                            </div>  
+	                        </a>
+	                   	 </div>
+							<div class="metro-nav-block nav-block-red block-4">
+							 <a data-original-title="" href="#">
+							 <div class="status m_menu" key="district">
+                            	
+							    NORTH GOA<br/>
+								
+							</div>
+                            <!-- <div class="info"><span class="counter1 counter_num2" style="display: inline-block; text-decoration: underline;"></span></div> -->
+                            	<div class="info atoz">
+							  		 
+							  			<i class="fa fa-hand-o-left" tabindex="0"
+   											style="font-size:30px; align:right; cursor:pointer;"
+   											role="button"
+   											aria-label="Go back"
+   											onClick="backData('30')"
+   											onkeydown="if(event.key === 'Enter' || event.key === ' ') backData('585');">
+										</i>       
+							    </div>
+                            
+                             <div class="top_circle_icons top_circle_bg2">
+                            	<img class="pic_icon2" src="images/location.png" alt="location_icon" aria-label="location">
+                            </div>  
+                       	 	</a> 
+                        
+                    	</div>
+	
+					<div class="metro-nav-block nav-block-red block-4">
+						<a href="#" data-toggle="tooltip" title="As on date operational ePOS" data-placement="top">
+                          <!--  <i class="icon-user"></i>-->
+                          <div class="status m_menu" key="pos">FAIR PRICE SHOPS</div>
+                            <div class="info atoz" style="top:15px;"><span class="counter1 counter_num3" style="display: inline-block;font-size: 10px; text-align:right; line-height: 12px;   ">
+                            
+							           SMT.SANNA SANJAY PADTE-83 FPS<br/>
+							       
+                            	</span></div>
+                               <div class="top_circle_icons top_circle_bg3">
+                          <img class="pic_icon3" src="images/home.png" alt="home" aria-label="home link">
+                          </div>
+                        </a>       
+                    </div>
+	
+					<div class="metro-nav-block nav-block-red block-4">
+					 <a data-original-title="" href="#">   
+		                       <div class="status m_menu" key="state"> FPS Id: </div>
+		                            <div class="info atoz"><span class="counter1 counter_num4" style="display: inline-block; text-decoration: underline; font-size: 16px;">
+		                            
+							           158500100001<br/>					    
+							       
+		                            </span></div>
+		                              <div class="top_circle_icons top_circle_bg3">
+                          				<img class="pic_icon3" src="images/home.png" alt="home" aria-label="home link">
+                         			 </div>
+		               </a>
+                    </div>
+			</div>	
+					<div class="metro-nav margin-top-10">
+								<div class="metro-nav-block1 nav-block-greenlight block-4" tabindex="0"> 
+				                          <!--  <i class="icon-user"></i>-->
+				                          <div class="status1 m_menu" key="trs">Total e-Transaction</div><br>
+				                            <div class="info infi_count" style="top:19px;">
+												<span class="counter convert">
+												
+												
+												
+												
+												
+													
+														
+														
+														
+														
+														
+																			 
+													
+												132</span>
+											</div>
+											
+											<div class="info atoz">
+											<span class="perce_text">
+											<span class="color">(<span class="color_a m_menu" key="aa">A</span>+<span class="color_b m_menu" key="bb">B</span>+<span class="color_c m_menu" key="cc">C</span>)</span>
+											</span>
+											</div>	
+											
+				                         <div class="notific_icons notific_bg1">
+										<img class="cercle_icons1" src="images/transaction.png" alt="transaction-icon" aria-label="icon for transaction">
+										</div>	   
+				                    </div>
+	
+	
+								<div class="metro-nav-block1 nav-block-green block-4" tabindex="0">                     
+				                          <!--  <i class="icon-user"></i>-->
+				                          <div class="status1 m_menu" key="aafioc">Aadhaar Authenticated<!-- AADHAAR AUTHENTICATED INCLUDING CASHLESS --></div>
+				                            <div class="info infi_count" style="top:20px;">
+											<span class="counter  convert">
+											     132</span></div>	
+												<div class="info percent">
+												<span class="perce_val">100%</span>
+												</div>
+											
+											<div class="info atoz">
+											<span class="perce_text">
+											<span class="color">(<span class="color_a m_menu" key="aa">A</span>)</span>
+											</span>
+											</div>					
+											 <div class="notific_icons notific_bg2">
+											<img class="cercle_icons2" src="images/adhaar.png" alt="aadhaar_icon" aria-label="icon for aadhaar">
+											</div>  
+				                            
+				                    </div>
+	
+								<div class="metro-nav-block1 nav-light-pink block-4" tabindex="0">
+			                          <!--  <i class="icon-user"></i>-->
+			                          <div class="status1 m_menu" key="aom1">Other Mode Authenticated</div>
+			                            <div class="info infi_count" style="top:18px;">
+			                            <span class="counter  convert">
+			                                   0</span></div>
+			                           
+			                           <div class="info percent">
+										<span class="perce_val">0%</span>
+										</div>
+										
+										<div class="info atoz">
+										<span class="perce_text">
+										<span class="color">(<span class="color_a m_menu" key="">B</span>)</span>
+										</span>
+										</div>					
+										
+										<div class="notific_icons notific_bg3">
+										<img class="cercle_icons3" src="images/card.png" alt="card-icon" aria-label="icon for card">
+										</div>             
+			                    </div>
+	
+								<div class="metro-nav-block1 nav-light-purple block-4" tabindex="0">
+			                          <!--  <i class="icon-user"></i>-->
+			                          <div class="status1 m_menu" key="nat1">Non-Authenticated</div><br>
+			                            <div class="info infi_count" style="top:19px;"><span class="counter  convert">
+			                                   0</span></div>
+										
+										<div class="info percent">
+										<span class="perce_val">0%</span>
+										</div>
+										
+										<div class="info atoz">
+										<span class="perce_text">
+										<span class="color">(<span class="color_a m_menu" key="">C</span>)</span>
+										</span>
+										</div>					
+										
+										<div class="notific_icons notific_bg4">
+										<img class="cercle_icons4" src="images/user.png" alt="user-icon">
+										</div>
+			                            
+			                    </div>				
+					</div>	
+		  
+		  		</div>
+					<div class="dash-row2 margin-top-20">
+							<div class="row hed_title">
+								<div class="col-md-6 offset-md-3">
+								<h4 class="margin-bottom-0 text-center"><span>Number of Transaction</span></h4>
+								</div>
+							</div>
+					<div class="table-responsive">
+						<table role="table" aria-label="Number of Transaction"  class="table table-bordered table-vertical-middle margin-bottom-0 state-rep0 focus-table">
+							<thead>
+								<tr>
+								  <th style="width: 32%;">NFSA Ration Card Type</th>
+									<th class="m_menu" key="h_nrc" style="width: 17%;">Regular</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Intra State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Inter State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Total</th>
+								</tr>
+							</thead>
+							<tbody>
+							
+							<tr>
+								<td class="m_menu text-left" key="h_phh">Priority Household(PHH)</td>
+								<td><span class="convert">
+								 
+								 
+								 
+															 
+															    
+															    
+															    
+															
+								132</span></td>
+								<td><span class="bigcount font-lato  convert">0</span></td>
+								<td><span class="bigcount font-lato  convert">0</span></td>
+								<td><span class="bigcount font-lato  convert">132</span></td>
+							</tr>
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Antyodaya Anna Yojana (AAY)</td>
+							<td><span class="convert">
+							 
+							 
+							 
+														 
+													 	    
+														    
+														     
+														  
+							0</span></td>
+							<td><span class="bigcount font-lato  convert">0</span></td>
+							<td><span class="bigcount font-lato  convert">0</span></td>
+							<td><span class="bigcount font-lato  convert">0</span></td>
+							</tr>
+							 </tbody>	
+						</table>
+						</div>
+						</div>
+
+			<div class="dash-row2 margin-top-20">
+						<div class="row hed_title">
+							<div class="col-md-6 offset-md-3">
+							<h4 class="margin-bottom-0 text-center"><span>Number of Transacted Ration Card</span></h4>
+							</div>
+						</div>
+						<div class="table-responsive">
+				<table role="table" aria-label="Number of Transacted Ration Card"  class="table table-bordered table-vertical-middle margin-bottom-0 state-rep2 focus-table">
+							<thead>
+								<tr>
+								  <th style="width: 32%;">NFSA Ration Card Type</th>
+									<th class="m_menu" key="h_nrc" style="width: 17%;">Regular</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Intra State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Inter State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Total</th>
+									
+								</tr>
+							</thead>
+							
+							<tbody>
+							
+							<tr>
+								<td class="m_menu text-left" key="h_phh">Priority Household (PHH)</td>
+								<td><span class="convert">
+								 
+								 
+								 
+															 
+															    
+															    
+															    
+															
+								132</span></td>
+								<td><span class="bigcount font-lato  convert">0</span></td>
+								<td><span class="bigcount font-lato convert">0</span></td>
+								<td><span class="bigcount font-lato convert">132</span></td>
+							
+							</tr>
+						<tr>
+							<td class="m_menu text-left" key="h_phh">Antyodaya Anna Yojana (AAY)</td>
+							<td><span class="convert">
+							 
+							 
+							 
+														 
+													 	    
+														    
+														     
+														  
+							0</span></td>
+							<td><span class="bigcount font-lato  convert">0</span></td>
+							<td><span class="bigcount font-lato convert">0</span></td>
+							<td><span class="bigcount font-lato  convert">0</span></td>		
+						</tr>
+							</tbody>								
+						</table>
+						</div>
+						</div>
+						
+						<div class="dash-row3 margin-top-30">
+						
+						<div class="row hed_title">
+<div class="col-md-6 offset-md-3">
+<h4 class="margin-bottom-0 text-center"><span>Distributed Quantity(In Kg)</span></h4>
+</div>
+</div>
+						
+						<div class="table-responsive">
+
+
+										<table role="table" aria-label="Distributed Quantity(In Kg)" class="table table-bordered table-vertical-middle margin-bottom-0 state-rep1 focus-table	" >
+											<thead>
+												<tr>
+													<th class="m_menu" key="h_comm" style="width: 20%;">Commodity</th>
+													<th class="m_menu" style="width: 20%;" key="central_alloc">Regular Txn</th>
+													<th class="m_menu" key="h_dist" style="width: 20%;">Intra state Txn</th>
+													<th class="m_menu" key="h_pdist" style="width: 20%;">Inter State Txn</th>
+													<th class="m_menu" key="h_pdist" style="width: 20%;">Total</th>
+
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td class="m_menu text-left" key="h_wheat">Wheat</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+											
+											<tr>
+													<td class="m_menu text-left" key="h_wheat">Fortified Rice</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert">
+													2.81</span></td>
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">2.81</span></td>
+													
+												</tr>
+											
+											<tr>
+													<td class="m_menu text-left" key="h_wheat">Rice</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert">2,810</span></td>
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													
+													<td><span class="convert">2810.0</span></td>
+													
+												</tr>
+		                                     <tr>
+										<td class="m_menu text-left activator" key="h_wheat">
+										  <button class="menu-toggle" aria-expanded="false" aria-controls="coarseGrainsPanel">
+										    <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus d-none" aria-hidden="true"></i> Coarse Grains
+										  </button>
+										</td>											             
+													     
+													     
+														 
+														    
+														    
+														    
+														 
+                                                    <td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert">0.0</span></td>
+											</tr>
+												
+												<tr class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Barley</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												 <tr class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Bajra</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												
+												<tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Maize</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												  <tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Jowar</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+											
+	                                              <tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Ragi</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+	                                             
+	                                             <tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Kodo</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+    
+    
+													<td><span  class="convert"> 0</span></td>
+													<td><span  class="convert"> 0</span></td>
+													<td><span  class="convert"> 0</span></td>
+													<td><span  class="convert">0.0</span></td>
+													
+												</tr>
+											
+													</tbody>
+											
+											<tfoot>
+												<tr>
+													<td class="m_menu" key="h_total">Total</td>
+  											        									
+												        <td><span class="convert">2,810</span></td>
+														<td><span class="convert">0</span></td>
+												        <td><span class="convert">0</span></td>
+														<td><span class="convert">2810.0</span></td>
+													
+												</tr>
+											</tfoot>
+											
+										</table>
+
+									</div>
+									</div>		  
+		  
+		  
+		
+		  </div>
+	
+	<div class="col-md-2">
+	
+							
+				 
+							
+							
+							
+						
+							        
+						 <div class="metro-nav" id="detailed_trans_div">	  
+						  
+							            <a data-original-title="" href="#"  data-bs-toggle="modal" data-bs-target="#myModal12" onclick="livefpsdetails('158500100001')" style="cursor: pointer;">
+				                          <!--  <i class="icon-user"></i>-->
+				                        
+									        <div class="metro-nav-block nav-block-cooc block-6 fpss_color margin-bottom-10">
+											<div class="status2 m_menu" key="" data-toggle="modal" data-target="">Detailed Transaction</div>
+									        </div> 
+								 </a>
+														    
+							             
+							        
+				          
+						 </div>
+							        
+							        
+							        
+							        
+							        
+							        
+							
+	</div>	  
+		
+	  </div>
+		 
+		
+</section>
+
+</div>
+
+<!-- ############################################## MODEL ################################################ -->
+	
+	<div id="myModal12" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+	<div class="modal-dialog transaction_details ">
+		<div class="modal-content">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+			<h4 class="modal-title m_menu text-center" key="l_state" id="myModalLabel">Detailed Transaction</h4>
+				<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				
+			</div>
+
+			<!-- Modal Body -->
+			<div class="modal-body">
+					
+						
+			<div class="row">
+			<div id="livefpsdetailId">
+				
+			</div>
+			</div>
+	
+			</div>
+
+		</div>
+	</div>
+</div>
+<script>
+    // Use document.ready to ensure the DOM is fully loaded before executing the script
+    $(document).ready(function() {
+    	
+    	  
+    		  
+    		  var sessionMonth='4';
+    	        var sessionYear='2026';
+    	          //      alert(sessionMonth+"-"+sessionYear);
+    	        // Get the current date
+    	       var currentDate = new Date();
+    	        
+    	       var sessionDate = new Date(sessionYear, sessionMonth - 1, 1);
+
+    	       
+    	       var diffMonths = (currentDate.getFullYear() - sessionDate.getFullYear()) * 12;
+    	       diffMonths -= sessionDate.getMonth();
+    	       diffMonths += currentDate.getMonth();
+
+    	       if(diffMonths>6){
+    	  
+    	    	   var elementToHide = $('#detailed_trans_div');
+    	    	   if (elementToHide.length) {
+    	    	       elementToHide.hide();
+    	    	   }
+    	       }
+    	       
+    	    //   console.log("Difference in months:", diffMonths);
+    	       
+    	       
+    	 //      console.log(sessionDate);
+    	       
+    	  
+    
+    });
+</script>
+	

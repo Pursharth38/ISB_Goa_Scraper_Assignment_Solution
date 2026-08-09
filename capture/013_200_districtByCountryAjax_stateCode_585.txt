@@ -1,0 +1,2801 @@
+URL: https://impds.nic.in/sale/districtByCountryAjax?stateCode=585
+STATUS: 200
+TIME: 2026-08-04 04:46:37.422176
+======================================================================
+
+
+
+
+      
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="assets/plugins/bootstrap/js/jquery.min.js"></script>
+<TITLE>Confirmation Message</TITLE>
+
+<!--slider css-->
+		<link href="/sale/assets/css/slider.css" type="text/css">
+		
+</HEAD>
+<style>
+.activator {
+	cursor: pointer;
+}
+
+.activator.open, .activator:hover {
+	background: #ccf;
+}
+
+.activator.open .fa-plus, .activator+.hidden-row {
+	display: none;
+}
+
+.activator.open+.hidden-row {
+	display: table-row;
+}
+
+.activator.open .fa-minus {
+	display: inline-block;
+}
+.swal-button {
+  background-color: #0F548C !important; /* Dark enough for contrast */
+  color: #FFFFFF !important;           /* White text */
+}
+.fa-hand-o-left:focus  {
+  outline: 3px solid #005fcc !important;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.table-responsive:focus-within {
+  overflow: auto;
+}
+.focus-table [tabindex="0"]:focus,
+.focus-table th:focus,
+.focus-table td:focus {
+  outline: 3px solid #005fcc !important;
+  outline-offset: 2px !important;
+
+}
+</style>
+<script>
+(() => {
+  const selTbl = '.focus-table';
+
+  const makeFocusable = () => {
+    document.querySelectorAll(selTbl + ' th, ' + selTbl + ' td').forEach(c => {
+      if (!c.hasAttribute('tabindex')) c.tabIndex = 0;
+      c.addEventListener('focus', () => c.classList.add('cell-focus'));
+      c.addEventListener('blur', () => c.classList.remove('cell-focus'));
+    });
+  };
+
+  const observer = new MutationObserver(() => makeFocusable());
+  observer.observe(document.body, { childList: true, subtree: true });
+  makeFocusable();
+})();
+</script>
+
+<script>
+
+$(function () {
+	  var $table = $("table");
+	  $table.find(".activator").click(function () {
+	    //$(this).toggleClass("open");
+	    $table.find(".customRow").toggleClass("d-none");
+	  });
+	});
+$(document).ready(function (e) {
+    $('#statecode').on('change', function () {
+        ajaxCallDistrictChange();
+    });
+
+    $(".menu-toggle").click(function () {
+        const $btn = $(this);
+        const panelId = $btn.attr("aria-controls");
+        const $panel = $("#" + panelId);
+
+        // Toggle panel visibility
+        $panel.toggle();
+
+        // Toggle aria-expanded
+        const expanded = $btn.attr("aria-expanded") === "true";
+        $btn.attr("aria-expanded", !expanded);
+
+        // Toggle icons
+        $btn.find("i").toggleClass("d-none");
+    });
+});
+</script>
+		
+<style>
+@media only screen and (max-width: 767px) {
+    .infi_count, .infi_count1, .infi_count2, .infi_count3, .percent, .atoz {
+        position: absolute;
+    }
+    
+ .top_circle_icons {
+        top: 8px;
+    }  
+    
+    
+    
+	@media (max-width: 1350px) {
+
+		.info {
+			margin-top: 15px;
+			text-align: center;
+		}
+		.counter.convert, .perce_val {
+			display: block;
+			margin-top: 5px;
+		}
+	}
+	@media (max-width: 1500px)  {
+		.status1.m_menu {
+			font-size: 14px;
+			padding: 5px;
+			text-align: center;
+		}
+		.info {
+			margin-top: 15px;
+			text-align: center;
+
+		}
+		.counter.convert, .perce_val {
+			display: block;
+			margin-top: 5px;
+		}
+		}
+		
+.amcharts-tooltip-div {
+  white-space: normal !important;
+}
+.amcharts-axis-label {
+  display: inline-block; 
+}
+
+.popup_table_rec1 {
+	width: 100%;
+	overflow: hidden;
+	font-family: Arial, sans-serif;
+}
+
+/* Cell Styling */
+.popup_table_rec1 td {
+	padding: 12px;
+	border-bottom: 1px solid #e0e0e0;
+	color: #555;
+	font-size: 14px;
+}
+
+/* Label Cells Styling */
+.popup_table_rec1 td:first-child {
+	font-weight: bold;
+	color: #2f4f4f; /* Darker color for labels */
+}
+
+/* Separator Column */
+.popup_table_rec1 td:nth-child(2) {
+	width: 10px;
+	text-align: center;
+	color: #666;
+}
+</style>
+<div class="container-fluid main-containt"  >
+
+<section class="padding-bottom-10" style="background:#f9f9f9;">
+	 
+		 
+		  <div class="row">
+		  
+			<!-- ********************************************* -->
+
+		<div class="col-md-3" >
+		  <div class="table-responsive" style="position:relative;">
+		             
+		                 <div class="blink_icon_img"  style="">
+							<a href="#" title="Kushavati" aria-label="Kushavati" onClick="DistrictData('738');"><img class="map" src="images/blinkingledlight.gif" alt="" aria-label="Kushavati" width="12" height="12"></a></div>
+							
+				   
+		                 <div class="blink_icon_img"  style="top:154px; left:173px; ">
+							<a href="#" title="NORTH GOA" aria-label="NORTH GOA" onClick="DistrictData('585');"><img class="map" src="images/blinkingledlight.gif" alt="" aria-label="NORTH GOA" width="12" height="12"></a></div>
+							
+				   
+		                 <div class="blink_icon_img"  style="top:271px; left:200px; ">
+							<a href="#" title="SOUTH GOA" aria-label="SOUTH GOA" onClick="DistrictData('586');"><img class="map" src="images/blinkingledlight.gif" alt="" aria-label="SOUTH GOA" width="12" height="12"></a></div>
+							
+				    
+				 
+		  				 
+						   
+								 
+								
+								 
+								
+								 
+								
+								
+								
+								
+								 
+								
+								
+								  
+								  
+								  
+								 
+								 
+								 
+								
+								 
+									 
+								
+								             <img src="images/state_map/goa.png" alt="map" class="en_logo" style=" width:350px;">
+								
+								 
+																
+								 
+								
+								
+								 
+								  
+								 
+								
+								
+								 
+								
+								
+								
+								 
+							 
+								 
+								
+								  
+								 
+								
+								 
+								 
+								
+								
+								 
+							
+								 
+								
+								  
+								 
+								
+								 
+								 
+								  
+
+						  
+	                    
+						 
+					   
+					   
+		  </div>
+		   <div>
+         <div id = "containerdata2" style = "width: 100%; height: 300px; margin: 0 auto"> </div> 
+	  	 </div>	
+		  
+		  </div>  
+  
+		  <div class="col-md-6">
+		  
+		  <div class="dash-row1 margin-top-0">
+		  <div class="metro-nav">
+
+
+				<div class="metro-nav-block nav-block-red block-3">
+	
+                         <a data-original-title="" href="#" >
+								 <div class="top_circle_icons top_circle_bg1">
+	                            	<img class="pic_icon1" src="images/india-map.png">
+	                            </div>
+		                         <div class="status m_menu" key="state" style="text-decoration: underline;">
+		                            
+									    GOA<br/>
+									
+								</div>
+							
+                            	<div class="info atoz"><span class="counter1 counter_num1" style="display: inline-block;"></span></div>
+                            
+                        </a>
+                    </div>
+					<div class="metro-nav-block nav-block-red block-3">
+							 <a data-original-title="" href="#">
+							  <div class="top_circle_icons top_circle_bg2">
+                            <img class="pic_icon2" src="images/location.png" alt="location_icon" aria-label="location">
+                            </div>
+							  <div class="status m_menu" key="district">
+                            
+							    NORTH GOA<br/>
+							</div>
+							  <div class="info atoz">
+					                
+					                	<i class="fa fa-hand-o-left" tabindex="0"
+   											style="font-size:30px; align:right; cursor:pointer;"
+   											role="button"
+   											aria-label="Go back"
+   											onClick="backData('30')"
+   											onkeydown="if(event.key === 'Enter' || event.key === ' ') backData('30');">
+										</i> 
+								
+                            </div>
+                             
+                            
+                        </a> 
+                        
+                    </div>
+	
+						<div class="metro-nav-block nav-block-red block-3">
+                        
+                         
+								
+									
+								
+                          		
+                        		 
+								       
+								           
+								    
+								                		<a href="#"  onclick="liveFpsdata('30','585')" style="cursor: pointer;">
+								                          <!--  <i class="icon-user"></i>-->
+								                          <div class="status m_menu" key="fps">FAIR PRICE SHOPS</div>
+								                            <div class="info atoz"><span class="counter1 counter_num3" style="display: inline-block; text-decoration: underline;">
+								                            240
+								                            </span></div>
+								                        
+													   		<div class="top_circle_icons top_circle_bg3">
+						                         				<img class="pic_icon3" src="images/home.png" alt="home" aria-label="home link">
+						                          			</div>
+														</a>
+								             
+								       
+							       
+                    	</div>
+	
+
+					
+	</div>	
+	
+
+		<div class="metro-nav margin-top-10">
+
+				<div class="metro-nav-block1 nav-block-greenlight block-4" tabindex="0">
+                          <!--  <i class="icon-user"></i>-->
+                          <div class="status1 m_menu" key="trs">Total e-Transaction</div><br>
+                            <div class="info infi_count" style="top:21px;">
+							<span class="counter convert">
+							
+							
+							
+							
+							
+														
+														    
+														    
+														    
+														    
+														    
+														 
+														
+														 51,070</span>
+							</div>
+							
+							<div class="info atoz">
+							<span class="perce_text">
+							<span class="color">(<span class="color_a m_menu" key="aa">A</span>+<span class="color_b m_menu" key="bb">B</span>+<span class="color_c m_menu" key="cc">C</span>)</span>
+							</span>
+							</div>	
+						
+						<div class="notific_icons notific_bg1">
+						<img class="cercle_icons1" src="images/transaction.png" alt="transaction-icon" aria-label="icon for transaction">
+						</div>	
+                            
+                    </div>
+	
+	
+    				<div class="metro-nav-block1 nav-block-green block-4" tabindex="0">
+                          <!--  <i class="icon-user"></i>-->
+                          <div class="status1 m_menu" key="aafioc">Aadhaar Authenticated<!-- AADHAAR AUTHENTICATED INCLUDING CASHLESS --></div>
+                            <div class="info infi_count" style="top:21px;">
+							<span class="counter convert">
+							       51,070</span></div>	
+							<div class="info percent">
+							<span class="perce_val">100%</span>
+							</div>
+							
+							<div class="info atoz">
+							<span class="perce_text">
+							<span class="color">(<span class="color_a m_menu" key="aa">A</span>)</span>
+							</span>
+							</div>					
+							
+							 <div class="notific_icons notific_bg2">
+							<img class="cercle_icons2" src="images/adhaar.png" alt="aadhaar_icon" aria-label="icon for aadhaar">
+							</div> 
+                            
+                    </div>
+	
+    			<div class="metro-nav-block1 nav-light-pink block-4" tabindex="0">
+                          <!--  <i class="icon-user"></i>-->
+                          <div class="status1 m_menu" key="aom1">Other Mode Authenticated</div>
+                            <div class="info infi_count" style="top:21px;">
+                            <span class="counter convert">
+                                   0</span></div>
+                           
+                           <div class="info percent">
+							<span class="perce_val">0%</span>
+							</div>
+							
+							<div class="info atoz">
+							<span class="perce_text">
+							<span class="color">(<span class="color_a m_menu" key="">B</span>)</span>
+							</span>
+							</div>					
+							
+							<div class="notific_icons notific_bg3">
+							<img class="cercle_icons3" src="images/card.png" alt="card-icon" aria-label="icon for card">
+							</div>
+                            
+                    </div>
+	
+    			<div class="metro-nav-block1 nav-light-purple block-4" tabindex="0">
+                          <!--  <i class="icon-user"></i>-->
+                          <div class="status1 m_menu" key="nat1">Non-Authenticated</div>
+                            <div class="info infi_count"  style="top:21px;">
+                            <span class="counter convert">
+                                   0</span></div>
+							
+							<div class="info percent">
+							<span class="perce_val">0%</span>
+							</div>
+							
+							<div class="info atoz">
+							<span class="perce_text">
+							<span class="color">(<span class="color_a m_menu" key="">C</span>)</span>
+							</span>
+							</div>					
+							
+							<div class="notific_icons notific_bg4">
+							<img class="cercle_icons4" src="images/user.png" alt="user-icon">
+							</div>
+                            
+                    </div>
+				
+		
+					
+	</div>
+		  
+		  </div>
+  <!-- number of RC start -->
+						<div class="dash-row2 margin-top-20">
+				<div class="row hed_title">
+					<div class="col-md-6 offset-md-3">
+						<!-- <h4 class="margin-bottom-0 text-center"><span>Number of RC</span></h4> -->
+					</div>
+				</div>
+						<div class="table-responsive">
+						<table role="table"  aria-label="Number of RC"  class="table table-bordered table-vertical-middle margin-bottom-0 state-rep7 focus-table">
+							<thead>
+								<tr>
+								  <th rowspan=2>NFSA Ration Card Type</th>
+									<th class="m_menu" key="h_nrc" colspan=2 >Number of </th>
+									<th class="m_menu" key="h_ntrc" colspan=2 >Number of Aadhaar seeded</th>
+								</tr>
+								<tr>
+									<th class="m_menu" key="h_nrc" >Ration Card </th>
+									<th class="m_menu" key="h_ntrc" >Beneficiary</th>
+									<th class="m_menu" key="h_nrc" >Ration Card </th>
+									<th class="m_menu" key="h_ntrc" >Beneficiary</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+							
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Priority Household (PHH)</td>
+							<td><span class="convert">
+							 
+							  
+							  
+							  
+														 
+														    
+														     
+														          
+														     
+														
+							 54,655</span></td>							
+							<td><span class="bigcount font-lato convert">197,083</span></td>
+							<td><span class="bigcount font-lato convert">54,550</span></td>
+							<td><span class="bigcount font-lato convert">196,029</span></td>
+							
+							</tr>
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Antyodaya Anna Yojana (AAY)</td>
+							<td><span class="convert">
+							 
+							  
+							  
+							  
+														 
+														    
+														    
+														    
+														     
+														     
+														     
+														
+							 8,487</span></td>
+							
+							
+							<td><span class="bigcount font-lato convert">28,417</span></td>
+							<td><span class="bigcount font-lato convert">8,473</span></td>
+							<td><span class="bigcount font-lato convert">28,303</span></td>
+							
+							</tr>
+							
+							
+
+							 </tbody>
+							<tfoot>
+												<tr>
+													<td class="m_menu" key="h_total">Total</td>
+  											        									
+												        <td><span  class="convert"> 63,142</span></td>
+														
+												        
+														<td><span  class="convert">225500</span></td>
+														<td><span  class="convert"> 63,023</span></td>
+														<td><span  class="convert"> 224,332</span></td>
+													
+												</tr>
+											</tfoot>
+								
+						</table>
+
+						</div>
+						</div>
+						<!-- Number of RC end here -->		  
+		  
+<div class="dash-row2 margin-top-20">
+<div class="row hed_title">
+<div class="col-md-6 offset-md-3">
+<h4 class="margin-bottom-0 text-center"><span>Number of Transaction</span></h4>
+</div>
+</div>
+						<div class="table-responsive">
+								<table role="table" aria-label="Number of Transaction" class="table table-bordered table-vertical-middle margin-bottom-0 state-rep0 focus-table">
+							<thead>
+								<tr>
+								  <th style="width: 32%;">NFSA Ration Card Type</th>
+									<th class="m_menu" key="h_nrc" style="width: 17%;">Regular</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Intra State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Inter State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Total</th>
+									
+								</tr>
+							</thead>
+							
+							<tbody>
+							
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Priority Household (PHH)</td>
+							<td><span class="convert">
+							 
+							 
+							 
+														 
+														    
+														    
+														    
+														
+							41,175</span></td>
+							<td><span class="bigcount font-lato convert">1,437</span></td>
+							<td><span class="bigcount font-lato convert">1,201</span></td>
+							<td><span class="bigcount font-lato convert">43,813</span></td>
+							
+							</tr>
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Antyodaya Anna Yojana (AAY)</td>
+							<td><span class="convert">
+							 
+							 
+							 
+														 
+													 	    
+														    
+														     
+														  
+							6,983</span></td>
+							<td><span class="bigcount font-lato convert">103</span></td>
+							<td><span class="bigcount font-lato convert">171</span></td>
+							<td><span class="bigcount font-lato convert">7,257</span></td>
+							
+							</tr>
+							
+
+							 </tbody>
+							
+								
+						</table>
+
+						</div>
+						</div>
+
+<div class="dash-row2 margin-top-20">
+						
+						<div class="row hed_title">
+<div class="col-md-6 offset-md-3">
+<h4 class="margin-bottom-0 text-center"><span>Number of Transacted Ration Card</span></h4>
+</div>
+</div>
+						
+						<div class="table-responsive">
+						<table role="table"  aria-label="Number of Transacted Ration Card"  class="table table-bordered table-vertical-middle margin-bottom-0 state-rep2 focus-table">
+							<thead>
+								<tr>
+								  <th style="width: 32%;">NFSA Ration Card Type</th>
+									<th class="m_menu" key="h_nrc" style="width: 17%;">Regular</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Intra State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Inter State</th>
+									<th class="m_menu" key="h_ntrc" style="width: 17%;">Total</th>
+									
+								</tr>
+							</thead>
+							
+							<tbody>
+							
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Priority Household (PHH)</td>
+							<td><span class="convert">
+							 
+							 
+							 
+														 
+														    
+														    
+														    
+														
+							41,156</span></td>
+							<td><span class="bigcount font-lato convert">1,437</span></td>
+							<td><span class="bigcount font-lato convert">1,201</span></td>
+							<td><span class="bigcount font-lato convert">43,794</span></td>
+							
+							</tr>
+							
+							</tr>
+							<tr>
+							<td class="m_menu text-left" key="h_phh">Antyodaya Anna Yojana (AAY)</td>
+							<td><span class="convert">
+							 
+							 
+							 
+														 
+													 	    
+														    
+														     
+														  
+							6,975</span></td>
+							<td><span class="bigcount font-lato convert">102</span></td>
+							<td><span class="bigcount font-lato convert">171</span></td>
+							<td><span class="bigcount font-lato convert">7,248</span></td>
+							
+							</tr>
+							</tbody>
+							
+							
+								
+						</table>
+
+						</div>
+						</div>
+						
+						<div class="dash-row3 margin-top-30">
+						
+						<div class="row hed_title">
+<div class="col-md-6 offset-md-3">
+<h4 class="margin-bottom-0 text-center"><span>Distributed Quantity(In MT)</span></h4>
+</div>
+</div>
+						
+						<div class="table-responsive">
+
+										<table role="table"  aria-label="Distributed Quantity(In MT)"  class="table table-bordered table-vertical-middle margin-bottom-0 state-rep1	focus-table" >
+											<thead>
+												<tr>
+													<th class="m_menu" key="h_comm" style="width: 20%;">Commodity</th>
+													<th class="m_menu" style="width: 20%;" key="central_alloc">Regular Txn</th>
+													<th class="m_menu" key="h_dist" style="width: 20%;">Intra state Txn</th>
+													
+													<!-- <th class="m_menu" key="h_allo" style="width: 20%;">ALLOCATED</th> -->
+													<th class="m_menu" key="h_pdist" style="width: 20%;">Inter State Txn</th>
+													<th class="m_menu" key="h_pdist" style="width: 20%;">Total</th>
+
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td class="m_menu text-left" key="h_wheat">Wheat</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+											
+											<tr>
+													<td class="m_menu text-left" key="h_wheat">Fortified Rice</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														  
+													<td><span class="convert">
+													1,002.383</span></td>
+													<td><span class="convert">28.74</span></td>
+													<td><span class="convert">29.146</span></td>
+													<td><span class="convert">1060.269</span></td>
+													
+												</tr>
+												
+											<tr>
+													<td class="m_menu text-left" key="h_wheat">Rice</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													<td><span class="convert">0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+		                                      <tr>
+										<td class="m_menu text-left activator" key="h_wheat">
+										  <button class="menu-toggle" aria-expanded="false" aria-controls="coarseGrainsPanel">
+										    <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus d-none" aria-hidden="true"></i> Coarse Grains
+										  </button>
+										</td>												             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+                                                    <td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												
+												<tr class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Barley</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												 <tr class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Bajra</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												
+												<tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Maize</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+												  <tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Jowar</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+											
+	                                              <tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Ragi</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														    
+														
+    
+    
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert"> 0</span></td>
+													<td><span class="convert">0.0</span></td>
+													
+												</tr>
+											
+											     <tr  class="customRow d-none">
+													<td class="m_menu text-left" key="h_wheat">Kodo</td>
+											             
+													     
+													     
+														 
+														    
+														    
+														    
+														
+    
+    
+													<td><span  class="convert"> 0</span></td>
+													<td><span  class="convert"> 0</span></td>
+													<td><span  class="convert"> 0</span></td>
+													<td><span  class="convert">0.0</span></td>
+													
+												</tr>
+	
+											
+													</tbody>
+											
+											<tfoot>
+												<tr>
+													<td class="m_menu" key="h_total">Total</td>
+  											        									
+												        <td><span  class="convert"> 1,002.383</span></td>
+														<td><span  class="convert"> 28.74</span></td>
+												        <td><span  class="convert"> 29.146</span></td>
+														<td><span  class="convert">1060.27</span></td>
+													
+												</tr>
+											</tfoot>
+											
+										</table>
+							
+
+									</div>
+									</div>		  
+		  
+		  
+		
+		  </div>
+	
+	<div class="col-md-3">
+	
+<div class="right_side_slider">	
+<h2 class="owl-featured noborder"></h2>								
+<div class="owl-carousel featured nomargin owl-padding-10" data-plugin-options='{"singleItem": false, "items": "1", "stopOnHover":false, "autoPlay":false, "autoHeight": false, "navigation": true, "pagination": false}'>
+
+<div class="client-logo">									
+		 <div class="state_count state_count_titl">
+		  <h3>Aadhaar Authentication Transactions</h3>
+		  </div>
+
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600096 NARESH V SHIRODKAR-31 FPS</h3></td>
+		  	<td class="text-center convert">59</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500200019 SHAMBHU VAMAN FADTE-36 FPS</h3></td>
+		  	<td class="text-center convert">106</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100001 SMT.SANNA SANJAY PADTE-83 FPS</h3></td>
+		  	<td class="text-center convert">132</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100338 SITABAI R NAIK-41 FPS</h3></td>
+		  	<td class="text-center convert">279</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100334 NETAJI R DHARGALKAR-97 FPS</h3></td>
+		  	<td class="text-center convert">142</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100037 GUIRIM SANGOLDA M.P. CO-OP SERVICE SOCIETY LTD-14 FPS</h3></td>
+		  	<td class="text-center convert">160</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100031 YOGESHWAR GANPAT TAMONKAR-49 FPS</h3></td>
+		  	<td class="text-center convert">310</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500300034 GURUNATH VASUDEV TALAVANEKAR-45 FPS</h3></td>
+		  	<td class="text-center convert">147</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500300141 PERNEM TALUKA FARMER CO.OP.STY.LTD.-41 FPS</h3></td>
+		  	<td class="text-center convert">204</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600087 JANATA CONSUMER CO OP STY-9 FPS</h3></td>
+		  	<td class="text-center convert">45</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100015 GOKULDAS FAIR PRICE SHOP-111 FPS</h3></td>
+		  	<td class="text-center convert">92</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100055 SANGEETA S PRABHU-80 FPS</h3></td>
+		  	<td class="text-center convert">96</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600093 SANDEEP S BHONSULE-17 FPS</h3></td>
+		  	<td class="text-center convert">27</td>
+		  	
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+
+		  
+		  	
+</div>	  
+
+<div class="client-logo">									
+		 <div class="state_count state_count_titl">
+		  <h3>Intra-state Based Distribution</h3>
+		  </div>
+
+
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600063</h3></td>
+		  	<td class="text-center convert">1</td>
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600105</h3></td>
+		  	<td class="text-center convert">8</td>
+		  	
+		  	
+		  	
+						
+						   <td class="text-center perc_col_green" style='width:65px;'>
+						  	100.00%
+						  	<span class="counter font-lato"></span></td>
+						
+						
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600068</h3></td>
+		  	<td class="text-center convert">40</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	75.47%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100328</h3></td>
+		  	<td class="text-center convert">99</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	69.72%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100050</h3></td>
+		  	<td class="text-center convert">50</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	69.44%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600003</h3></td>
+		  	<td class="text-center convert">9</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	69.23%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100038</h3></td>
+		  	<td class="text-center convert">83</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	66.94%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600074</h3></td>
+		  	<td class="text-center convert">62</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	53.91%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500200006</h3></td>
+		  	<td class="text-center convert">61</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	53.51%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600093</h3></td>
+		  	<td class="text-center convert">13</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	48.15%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100331</h3></td>
+		  	<td class="text-center convert">9</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	45.00%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600037</h3></td>
+		  	<td class="text-center convert">4</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	44.44%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100040</h3></td>
+		  	<td class="text-center convert">60</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	43.17%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+</div>
+<div class="client-logo">									
+		 <div class="state_count state_count_titl">
+		  <h3>Inter-State Based Distribution</h3>
+		  </div>
+
+
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100333</h3></td>
+		  	<td class="text-center convert">57</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	59.38%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600086</h3></td>
+		  	<td class="text-center convert">60</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	50.85%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600094</h3></td>
+		  	<td class="text-center convert">154</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	46.25%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600088</h3></td>
+		  	<td class="text-center convert">57</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	39.04%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600046</h3></td>
+		  	<td class="text-center convert">34</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	30.91%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600006</h3></td>
+		  	<td class="text-center convert">20</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	24.10%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100043</h3></td>
+		  	<td class="text-center convert">64</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	20.45%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500200010</h3></td>
+		  	<td class="text-center convert">67</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	18.82%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100047</h3></td>
+		  	<td class="text-center convert">28</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	16.87%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100024</h3></td>
+		  	<td class="text-center convert">18</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	15.52%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500600003</h3></td>
+		  	<td class="text-center convert">2</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	15.38%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500100056</h3></td>
+		  	<td class="text-center convert">27</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	15.34%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+<div class="state_count best_perform">	
+		  		 
+			<table class="margin-bottom-0 right_data">
+
+			
+		  	<tr>
+		  		<td class="text-left" style='width:200px;'><h3 class="margin-bottom-0 m_menu" >158500200018</h3></td>
+		  	<td class="text-center convert">53</td>
+		  	
+		  	
+		  	
+						
+						
+						
+						   <td class="text-center perc_col_red" style='width:65px;'>
+						  	15.14%
+						  	<span class="counter font-lato"></span></td>
+						
+				
+
+		  	</tr>
+		  	</table>
+			  
+			 </div>
+
+		  
+		  	
+</div>
+<!-- (client-logo section end---)	 -->
+
+	
+</div>
+</div>
+
+	</div>	  
+		
+	  </div>
+		 
+		 <div class="row">
+	  	
+	  	 <div class="col-md-12">
+	  	 
+	
+	  	 
+<div style="width: 100%; overflow-x: auto;">
+
+	  	 <div id = "container1" style = "min-width: 800px; height: 350px; margin: 0 auto" > </div>
+
+	  	 </div>
+	  	 
+	  	 
+	  	</div>
+	
+</section>
+
+</div>
+
+<!-- ############################################## MODEL ################################################ -->
+			
+		<div id="myModal11" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+			<h4 class="modal-title m_menu" key="l_state" id="myModalLabel">Live FPS</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				
+			</div>
+
+			<div class="modal-body">
+					
+						
+			<div class="row">
+			<div id="liveDivId">
+				
+			</div>
+			</div>
+	
+			</div>
+
+			
+
+		</div>
+	</div>
+</div> 
+
+
+		<script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
+		<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/js/scripts.js"></script>
+<!-- currency converter -->
+<script>
+			$(function() {
+				var convertText = $(".convert");
+				for(var i=0; i<convertText.length; i++){
+					$(".convert").eq(i).text(convert($(".convert").eq(i).text()));
+				}
+				function convert(text){
+					var x = text;
+					//var x = $('#result1').text();
+					x=x.toString();
+					x = x.replace(/\,/g, '');
+					var afterPoint = '';
+					if(x.indexOf('.') > 0)
+					afterPoint = x.substring(x.indexOf('.'),x.length);
+					x = Math.floor(x);
+					x=x.toString();
+					var lastThree = x.substring(x.length-3);
+					var otherNumbers = x.substring(0,x.length-3);
+					if(otherNumbers != '')
+						lastThree = ',' + lastThree;
+					var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + afterPoint;
+					return res;
+					//document.getElementById('result1').innerHTML = res;
+				}
+			});
+		</script>
+<script>
+ 
+/* function liveFpsdata(stateId,districtId) {
+	 var url = "liveFpsAjax";
+	jQuery.ajax({
+		type : "GET",
+		url : url,
+		data : { "stateCode" :stateId,"districtCode" :districtId},
+		beforeSend : function() {
+
+		},
+		success : function(result) {
+			$("#liveDivId").html(result);
+		},
+		complete : function() {
+			$("#liveDivId").show();
+			//$("#stateDefaultDivId").hide();
+			
+
+		}
+	});
+
+	return false; 
+} */
+
+function liveFpsdata(stateId,districtId) {
+	 var url = "fpsByCountryAjax2"; 
+	 $(".loader").show();
+		jQuery.ajax({
+			type : "GET",
+			url : url,
+			data : { "stateCode" :stateId},
+			beforeSend : function() {
+
+			},
+			success : function(result) {
+				$(".loader").hide();
+				$("#stateDivId").html(result);
+
+			},
+			complete : function() {
+		
+				$("#stateDivId").show();
+				$("#stateDefaultDivId").hide();
+				
+
+			}
+		});
+
+}
+function stateData(fpsId) {
+	 var url = "fpsByCountryAjax";
+	 $(".loader").show();
+		jQuery.ajax({
+			type : "GET",
+			url : url,
+			data : { "stateCode" :fpsId},
+			beforeSend : function() {
+
+			},
+			success : function(result) {
+				$(".loader").hide();
+				$("#stateDivId").html(result);
+
+			},
+			complete : function() {
+		
+				$("#stateDivId").show();
+				$("#stateDefaultDivId").hide();
+				
+
+			}
+		});
+}
+	
+	
+	
+function DistrictData(districtId) {
+	 var url = "districtByCountryAjax";
+	 $(".loader").show();
+		jQuery.ajax({
+			type : "GET",
+			url : url,
+			data : { "stateCode" :districtId},
+			beforeSend : function() {
+
+			},
+			success : function(result) {
+				$(".loader").hide();
+				$("#stateDivId").html(result);
+
+			},
+			complete : function() {
+		
+				$("#stateDivId").show();
+				$("#stateDefaultDivId").hide();
+				
+
+			}
+		});
+		
+}
+
+
+function backData(stateId) {
+	 var url = "stateByCountryAjax";
+	 $(".loader").show();
+		jQuery.ajax({
+			type : "GET",
+			url : url,
+			data : { "stateCode" :stateId},
+			beforeSend : function() {
+
+			},
+			success : function(result) {
+				$(".loader").hide();
+				$("#stateDivId").html(result);
+
+			},
+			complete : function() {
+		
+				$("#stateDivId").show();
+				$("#stateDefaultDivId").hide();
+				
+
+			}
+		});
+}
+</script>
+			
+<script type="text/javascript">
+			function goBack() {
+			    window.history.back();
+			}
+			</script>
+			<!-- TO PREVENT BROWSER BACK BUTTON CLICK -->
+			<script type="text/javascript">
+				 window.history.forward();
+				
+				 //window.location="sessionexpired";
+				function noBack() {
+					window.history.forward(); 
+					
+					}  
+		
+			</script>
+			
+
+
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+<script>
+am5.ready(function() {
+
+  // Create root
+  var root = am5.Root.new("containerdata2");
+  root.accessible = true;
+  root._logo.dispose();
+
+  root.setThemes([am5themes_Animated.new(root)]);
+
+  // Create chart
+  var chart = root.container.children.push(am5percent.SlicedChart.new(root, {
+    layout: root.verticalLayout,
+    role: "region",
+    ariaLabel: "Funnel chart showing Aadhaar transaction breakdown"
+  }));
+
+  // Funnel series
+  var series = chart.series.push(am5percent.FunnelSeries.new(root, {
+    alignLabels: false,
+    orientation: "vertical",
+    valueField: "value",
+    categoryField: "category",
+    bottomRatio: 1
+  }));
+
+  // Replace with your actual values
+  var total_transaction = 51070.0;
+  var aadhaar_txt = 51070.0;
+  var non_authenticated_txt = 0.0;
+  var authenticated_txt = 0.0;
+
+  // Accessible slice labels
+  series.slices.template.adapters.add("ariaLabel", function(text, target) {
+    var dataItem = target.dataItem;
+    if (dataItem) {
+      var value = dataItem.get("value");
+      var percent = ((value * 100) / total_transaction).toFixed(2);
+      return dataItem.get("category") + " â " + percent + "%";
+    }
+    return text;
+  });
+
+//Each slice can be focused and spoken
+  series.slices.template.setAll({
+    focusable: true,
+    role: "button",
+    ariaHidden: false,
+    cursorOverStyle: "pointer"
+  });
+  // Tooltip for visual users
+  series.slices.template.adapters.add("title", function(text, target) {
+    var dataItem = target.dataItem;
+    if (dataItem) {
+      var value = dataItem.get("value");
+      var percent = ((value * 100) / total_transaction).toFixed(2);
+      return dataItem.get("category") + ": " + percent + "%";
+    }
+    return text;
+  });
+
+  // Keyboard interaction for slices
+  series.slices.template.events.on("keydown", function(ev) {
+    if (ev.originalEvent.key === "Enter" || ev.originalEvent.key === " ") {
+      var slice = ev.target;
+      var dataItem = slice.dataItem;
+      if (dataItem) {
+        series.slices.each(function(s) { s.set("opacity", 1); });
+        slice.set("opacity", 0.6);
+
+        var value = dataItem.get("value");
+        var percent = ((value * 100) / total_transaction).toFixed(2);
+        document.getElementById("chartLiveRegion").textContent =
+          dataItem.get("category") + ": " + percent + "%";
+      }
+      ev.originalEvent.preventDefault();
+    }
+  });
+
+  // Set colors
+  series.get("colors").set("colors", [
+    am5.color("#507D32"), // Aadhaar Authenticated
+    am5.color("#166988"), // Non-Authenticated
+    am5.color("#CC6666")  // Other Mode Authenticated
+  ]);
+
+  // Set data
+  series.data.setAll([
+    { value: aadhaar_txt, category: "Aadhaar Authenticated" },
+    { value: non_authenticated_txt, category: "Non-Authenticated" },
+    { value: authenticated_txt, category: "Other Mode Authenticated" }
+  ]);
+
+  // Legend
+  var legend = chart.children.push(am5.Legend.new(root, {
+    centerX: am5.p50,
+    x: am5.p50,
+    marginTop: 15,
+    marginBottom: 15,
+    role: "list",
+    ariaLabel: "Chart legend"
+  }));
+
+  legend.data.setAll(series.dataItems);
+
+//Ensure legend item containers are positioned correctly
+legend.itemContainers.template.setAll({
+  focusable: true,
+  tabindex: 0,
+  role: "button", // change from listitem to button for better SR support
+  ariaHidden: false,
+  pointerEvents: "auto",
+  visible: true
+});
+
+  // After chart and legend are ready, force recalculation
+  chart.events.once("ready", function() {
+      legend.itemContainers.each(function(container, index) {
+          // set top positions manually based on index
+          container.set("y", chart.height() + 5 + index * 30); 
+          container.set("x", 100); // adjust left if needed
+      });
+  });
+
+
+  // Legend ARIA label
+legend.itemLabels.template.adapters.add("text", function(text, target) {
+  var dataItem = target.dataItem;
+  if (dataItem && dataItem.dataContext) {
+    var category = dataItem.dataContext.category;
+    var value = dataItem.dataContext.value;
+    var percent = ((value * 100) / total_transaction).toFixed(2);
+    return category + " (" + percent + "%)";
+  }
+  return text;
+});
+  // Update ARIA live region when legend items are clicked
+legend.itemContainers.template.adapters.add("ariaLabel", function(label, target) {
+  var dataItem = target.dataItem;
+  if (dataItem && dataItem.dataContext) {
+    var category = dataItem.dataContext.category;
+    var value = dataItem.dataContext.value;
+    var percent = ((value * 100) / total_transaction).toFixed(2);
+    return category + ": " + percent + "%; Press Enter to toggle visibility";
+  }
+  return label;
+});
+
+//Fix: make Enter key work (not Alt+Enter)
+legend.itemContainers.template.events.on("keydown", function(ev) {
+  if (ev.originalEvent.key === "Enter" || ev.originalEvent.key === " ") {
+    ev.originalEvent.preventDefault();
+    ev.target.events.dispatch("click", { type: "click", target: ev.target });
+    var dataItem = ev.target.dataItem;
+    if (dataItem && dataItem.dataContext) {
+      var category = dataItem.dataContext.category;
+      var value = dataItem.dataContext.value;
+      var percent = ((value * 100) / total_transaction).toFixed(2);
+      document.getElementById("chartLiveRegion").textContent =
+        category + " toggled. Current share " + percent + "%.";
+    }
+  }
+});
+  
+  // Initial ARIA live region update
+  setTimeout(function() {
+    var messages = series.dataItems.map(function(di) {
+      var category = di.get("category");
+      var value = di.get("value");
+      var percent = ((value * 100) / total_transaction).toFixed(2);
+      return category + ": " + percent + "%";
+    });
+    document.getElementById("chartLiveRegion").textContent = messages.join(". ");
+  }, 500);
+
+//After chart render, adjust accessibility overlay positions if needed
+  setTimeout(function() {
+    document.querySelectorAll('div[role="listitem"][aria-label*="Aadhaar Authenticated"]').forEach(function(el) {
+      el.style.top= "190px";
+      el.style.left= "60px";
+      el.style.width= "250px";
+
+    });
+    document.querySelectorAll('div[role="listitem"][aria-label*="Non-Authenticated"]').forEach(function(el) {
+        el.style.top= "215px";
+        el.style.left= "60px";
+     });
+  }, 1000); 
+  // Animate chart
+  series.appear(1000);
+  chart.appear(1000, 100);
+
+});
+</script>
+
+<script src="amcharts/core.js"></script>
+<script src="amcharts/charts.js"></script>
+<script src="amcharts/themeanimated.js"></script>
+<script>
+am4core.ready(function() {
+	am4core.useTheme(am4themes_animated);
+	am4core.options.autoSetClassName = true;
+	am4core.options.commercialLicense = true;
+	
+	var chart = am4core.create("container1", am4charts.XYChart3D);
+	chart.colors.list = [
+	  am4core.color("#F08080"),
+	  am4core.color("#1b7ea5"),
+	  am4core.color("#62983e"), 
+	];
+	chart.data = [
+	   
+	   {
+	     "FPSName": "158500200019",
+	     "Inter-StateTransaction": 2.830188679245283,
+	     "Intra-stateTransaction": 1.8867924528301887,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100001",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100338",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.35842293906810035,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100334",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100037",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 1.25,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100031",
+	     "Inter-StateTransaction": 3.5483870967741935,
+	     "Intra-stateTransaction": 4.516129032258065,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500300034",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500300141",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.9803921568627451,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500600087",
+	     "Inter-StateTransaction": 13.333333333333334,
+	     "Intra-stateTransaction": 2.2222222222222223,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100015",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 1.0869565217391304,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100055",
+	     "Inter-StateTransaction": 11.458333333333334,
+	     "Intra-stateTransaction": 3.125,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500600093",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 48.148148148148145,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500200189",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500200171",
+	     "Inter-StateTransaction": 1.048951048951049,
+	     "Intra-stateTransaction": 0.6993006993006993,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500200023",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.37105751391465674,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100318",
+	     "Inter-StateTransaction": 1.7857142857142858,
+	     "Intra-stateTransaction": 1.7857142857142858,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500600066",
+	     "Inter-StateTransaction": 3.8251366120218577,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500300019",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 1.1904761904761905,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500300138",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.8583690987124464,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500300144",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 1.2765957446808511,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500500020",
+	     "Inter-StateTransaction": 0.7537688442211056,
+	     "Intra-stateTransaction": 0.7537688442211056,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500200190",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100042",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 2.1538461538461537,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100033",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 9.395973154362416,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500600092",
+	     "Inter-StateTransaction": 7.18562874251497,
+	     "Intra-stateTransaction": 2.9940119760479043,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100009",
+	     "Inter-StateTransaction": 3.067484662576687,
+	     "Intra-stateTransaction": 1.0224948875255624,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500600075",
+	     "Inter-StateTransaction": 4.878048780487805,
+	     "Intra-stateTransaction": 0.975609756097561,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500300012",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500600068",
+	     "Inter-StateTransaction": 7.547169811320755,
+	     "Intra-stateTransaction": 75.47169811320755,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100352",
+	     "Inter-StateTransaction": 6.930693069306931,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500300147",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100371",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 1.0050251256281406,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500500009",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500600069",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 1.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100030",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100333",
+	     "Inter-StateTransaction": 59.375,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500600053",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500300004",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100008",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	   {
+	     "FPSName": "158500100028",
+	     "Inter-StateTransaction": 0.0,
+	     "Intra-stateTransaction": 0.0,
+	     "AadhaarTransaction": 100.0
+	   },
+	   
+	    ];
+	chart.numberFormatter.numberFormat = "##.##";    
+	var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+	categoryAxis.renderer.labels.template.rotation = 300;
+    categoryAxis.renderer.labels.template.wrap = true;
+    categoryAxis.renderer.labels.template.truncate = false;
+    categoryAxis.renderer.labels.template.maxWidth = 200;
+    
+	categoryAxis.dataFields.category = "FPSName";
+	categoryAxis.renderer.grid.template.location = 0;
+	categoryAxis.renderer.minGridDistance = 0;
+	categoryAxis.renderer.labels.template.verticalCenter = "middle";
+	categoryAxis.renderer.labels.template.horizontalCenter = "right";
+	
+	// Enable wrapping
+	categoryAxis.renderer.labels.template.wrap = true;
+	categoryAxis.renderer.labels.template.truncate = false;
+	categoryAxis.renderer.labels.template.isMeasured = true;
+	
+	var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+	valueAxis.title.text = "Monthly Transaction Performance Data";
+	valueAxis.min = 0;
+	valueAxis.max = 100;
+	valueAxis.renderer.minGridDistance = 20;
+	valueAxis.renderer.labels.template.adapter.add("text", function(text) {
+	return text + "%";
+	});
+	var series = chart.series.push(new am4charts.ColumnSeries3D());
+	series.dataFields.valueY = "Inter-StateTransaction";
+	series.dataFields.categoryX = "FPSName";
+	series.clustered = false;
+	series.name = "Inter-State Transaction";
+	series.columns.template.tooltipText = "Inter-State Transaction: [bold]{valueY}[/]% {categoryX}";
+	series.columns.template.fillOpacity = .8;
+	series.configField = "config";
+	var series2 = chart.series.push(new am4charts.ColumnSeries3D());
+	series2.dataFields.valueY = "Intra-stateTransaction";
+	series2.clustered = false; 
+	series2.dataFields.categoryX = "FPSName";
+	series2.name = "Intra-state Transaction";
+	series2.columns.template.tooltipText = "Intra-state Transaction: [bold]{valueY}[/]% {categoryX}";
+	var series3 = chart.series.push(new am4charts.ColumnSeries3D());
+	series3.dataFields.valueY = "AadhaarTransaction";
+	series3.dataFields.categoryX = "FPSName";
+	series3.name = "Aadhaar Transaction";
+	series3.clustered = false;
+	series3.columns.template.tooltipText = "Aadhaar Transaction: [bold]{valueY}[/]% {categoryX}";
+	series3.columns.template.fillOpacity = 0.9;
+	/* chart.cursor = new am4charts.XYCursor();
+	chart.cursor.xAxis = categoryAxis; */
+	chart.legend = new am4charts.Legend();
+	
+	  //  Accessibility: enable focus for 20+ items
+	  chart.events.on("ready", function() {
+	    if (chart.data.length >= 20) {
+	      chart.series.each(function(series) {
+	        series.columns.each(function(column) {
+	          column.interactionsEnabled = true;
+	          column.focusable = true;
+	          column.role = "img";
+	          column.readerTitle = series.name + ": " + column.dataItem.categoryX + " " +  parseFloat(column.dataItem.valueY).toFixed(2) + "%";
+	        });
+	      });
+	    }
+	  });
+	
+	});
+
+</script>
+<style>
+
+.modal-dialog15 {
+    width: 500px;
+    margin: 30px auto;
+}
+
+.amcharts-tooltip-div {
+  white-space: normal !important;
+}
+
+
+.amcharts-axis-label {
+  display: block !important;
+  white-space: normal !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  max-width: 200px !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+.amcharts-axis-label tspan {
+  white-space: normal !important;
+}
+
+</style>
+</HTML>

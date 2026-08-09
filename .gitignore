@@ -1,0 +1,24 @@
+# python bytecode, regenerated automatically, never useful to anyone else
+__pycache__/
+*.pyc
+
+# written fresh by every run, not part of the deliverable
+scrape_run.log
+
+# working files kept out of the submission
+isbnoneed/
+
+# local environments, editor and tooling settings
+.venv/
+venv/
+.vscode/
+.idea/
+.claude/
+tempCodeRunnerFile.*
+
+# windows / onedrive clutter
+Thumbs.db
+desktop.ini
+
+# note: data/ and capture/ are deliberately NOT ignored - the raw json is the
+# evidence behind the csv, and capture/ is the recorded traffic behind section 2

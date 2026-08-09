@@ -1,0 +1,26 @@
+URL: https://impds.nic.in/sale/liveDistrictAjax?stateCode=30
+STATUS: 200
+TIME: 2026-08-04 04:46:30.171111
+======================================================================
+
+
+
+
+	<ol style="margin-bottom: 0px;">
+		
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('585')">NORTH GOA</a></span></li>
+			
+					
+	
+			
+				<li  data-bs-dismiss="modal">
+				<span class="font-lato"><a href="#" style="font-size: 16px; font-weight: 500;" onclick="stateData('586')">SOUTH GOA</a></span></li>
+			
+					
+	
+	</ol>
+
+
+	
