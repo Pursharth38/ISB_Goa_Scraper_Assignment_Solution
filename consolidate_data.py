@@ -106,7 +106,6 @@ def flatten_record(record):
         "year": record.get("year"),
         "month": record.get("month"),
         "month_name": record.get("month_name"),
-        "scraped_at_utc": record.get("scraped_at_utc"),
     }
 
     # 1 the four summary cards

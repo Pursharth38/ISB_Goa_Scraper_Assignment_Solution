@@ -249,11 +249,11 @@ The second script turns those 904 JSON files into one CSV, **one row per shop pe
 
 ### 8.1 Flattening
 
-Each shop file has four summary cards and three tables. Flattening walks them in a fixed order and produces **75 columns**:
+Each shop file has four summary cards and three tables. Flattening walks them in a fixed order and produces **74 columns**:
 
 | Group | Columns | Example |
 |---|---|---|
-| Identity | 9 | `fps_id`, `district`, `month`, `scraped_at_utc` |
+| Identity | 8 | `fps_id`, `fps_name`, `district`, `month` |
 | Summary cards | 4 + 1 derived | `total_etransactions`, `aadhaar_authenticated_pct` |
 | Transactions | 8 | `phh_regular_txn`, `aay_inter_state_txn` |
 | Ration cards | 8 | `phh_total_ration_card` |
