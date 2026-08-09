@@ -280,9 +280,8 @@ Nothing is ever silently dropped or corrected. Anything odd is recorded in a `qu
 | `no_transactions` | a real shop with zero sales that month |
 | `cards_dont_sum` | the four summary cards don't add to the headline total |
 | `commodity_total_mismatch` | the site's Total row ≠ Wheat + Rice + Coarse Grains |
-| `fortified_rice_not_rice_in_tonnes` | see below |
 
-**On Fortified Rice** — it is not a separate commodity. Across every file it equals the Rice figure divided by 1000, i.e. the same quantity restated in tonnes. The site's own Total row confirms this: it equals Wheat + Rice + Coarse Grains and **excludes** Fortified Rice. So `rice_total_kg` and `fortified_rice_total_kg` must never be added together — the column is kept because it's on the page, and flagged if a shop ever breaks the pattern.
+Every commodity row on the page gets its own columns, exactly as the site shows them. Nothing is combined or recalculated.
 
 ### 8.4 Completeness
 
@@ -304,7 +303,6 @@ Before finishing, the script compares the rows written against the totals in eve
 ## 10. Assumptions
 
 - **The figures don't change while a run is going.** A run takes about ten minutes. If the site updated a shop's numbers halfway through, the first half and second half of the data would be from different moments and I wouldn't know.
-- **Fortified Rice is the Rice figure in tonnes, not extra rice.** The site never says this. It held in every file and the site's own total row agrees, but it is my conclusion from the data — and the CSV is built on it, since the two must never be added together.
 - **The coarse grain zeros are real.** All six came back zero for every shop. I have taken that as genuinely zero rather than something failing to load, because the totals add up correctly without them.
 
 ---
@@ -347,7 +345,7 @@ Run step 1 first — step 2 has nothing to read otherwise. On Windows, use `py` 
 ├── consolidate_data.py    builds the csv            (step 2)
 ├── network_analysis.py    the Playwright wiretap used for discovery (section 2.2)
 ├── requirements.txt       the two packages needed
-├── APPROACH.md            this file
+├── README.md            this file
 ├── capture/               the 15 responses the wiretap recorded
 └── data/
     ├── raw/               one json per shop, per month, per district

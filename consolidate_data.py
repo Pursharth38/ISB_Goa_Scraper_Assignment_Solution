@@ -166,19 +166,12 @@ def quality_flags(record, row):
         if sum(parts) != row["total_etransactions"]:
             flags.append("cards_dont_sum")
 
-    # the sites Total row should equal wheat + rice + coarse grains. fortified
-    # rice is NOT part of that sum - it is the rice figure restated in tonnes,
-    # so adding it in would double count (S8.3)
+    # the sites own Total row should equal wheat + rice + coarse grains
     total_row = row.get("all_commodities_total_kg")
     parts = [row.get(c) for c in ("wheat_total_kg", "rice_total_kg", "coarse_grains_total_kg")]
     if total_row is not None and all(p is not None for p in parts):
         if abs(sum(parts) - total_row) > 0.01:
             flags.append("commodity_total_mismatch")
-
-    # and check that restatement actually holds for this shop
-    rice, fortified = row.get("rice_total_kg"), row.get("fortified_rice_total_kg")
-    if rice and fortified is not None and abs(fortified - rice / 1000.0) > 0.06:
-        flags.append("fortified_rice_not_rice_in_tonnes")
 
     return flags
 

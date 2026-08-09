@@ -13,7 +13,6 @@ isbnoneed/
 venv/
 .vscode/
 .idea/
-.claude/
 tempCodeRunnerFile.*
 
 # windows / onedrive clutter
