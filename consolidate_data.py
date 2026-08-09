@@ -183,7 +183,7 @@ def find_raw_files():
 def count_expected_shops():
     """Reads every _manifest.json to get how many shops each folder should have"""
     # the manifest is what the site itself listed, so it is the only honest
-    # answer to "did we get everything" (S4.3)
+    # answer to "did we get everything"
     expected = {}
     for folder, _, filenames in os.walk(RAW_DIR):
         if "_manifest.json" not in filenames:
@@ -234,7 +234,7 @@ def main():
         writer.writerows(rows)
 
     # completeness: the manifests say how many shops the site listed, so a short
-    # csv is a fact we can state rather than something you have to notice (S4.3)
+    # csv is a fact we can state rather than something you have to notice
     total_expected = sum(count_expected_shops().values())
     return 1 if (flagged or unreadable or len(rows) != total_expected) else 0
 

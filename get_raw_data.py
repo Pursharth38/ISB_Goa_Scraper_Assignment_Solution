@@ -181,7 +181,7 @@ def dashboard_block_percent(soup, label):
 
 def parse_panel_fps_id(soup):
     """Which shop the right panel is actually showing, None if theres no panel at all"""
-    # this one check is what the whole run depends on (S5.1). kept strict on
+    # this one check is what the whole run depends on. kept strict on
     # purpose - no regex fallback over the full page, because that would match a
     # code from the left hand list and call a broken response a success
     value = dashboard_block_value(soup, "FPS Id")
@@ -261,7 +261,7 @@ def fetch_shop_panel(session, fps_code):
             continue
 
         if response.status_code >= 500:
-            # we retry based on the CAUSE not the status code (S5.2). every 500
+            # we retry based on the CAUSE not the status code. every 500
             # we could trigger came back byte identical, meaning it will never
             # succeed, so waiting 2+4+8s on it just wastes 14 seconds
             signature = (response.status_code, len(response.text))
@@ -278,7 +278,7 @@ def fetch_shop_panel(session, fps_code):
             continue
 
         # a failed shop still comes back as 200, so this split below is the
-        # actual error handling (S5.1)
+        # actual error handling
         soup = BeautifulSoup(response.text, "html.parser")
         displayed_code = parse_panel_fps_id(soup)
         if displayed_code is None:
@@ -292,8 +292,8 @@ def fetch_shop_panel(session, fps_code):
 def read_reference_shop(session, fps_code):
     """Reads a shop we already know the answer for, to prove the session hasnt moved. None if unreadable"""
     # the response has no month written in it anywhere, so the FPS Id check
-    # cannot catch month drift - re-reading a known shop is the only way (S5.3). we grab the
-    # baseline at session start so it works for any month/district
+    # cannot catch month drift - re-reading a known shop is the only way. we grab
+    # the baseline at session start so it works for any month/district
     outcome, html = fetch_shop_panel(session, fps_code)
     if outcome != "ok":
         return None
