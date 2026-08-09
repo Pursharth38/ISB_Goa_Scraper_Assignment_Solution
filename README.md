@@ -314,7 +314,7 @@ git clone https://github.com/Pursharth38/ISB_Goa_Scraper_Assignment_Solution
 cd ISB_Goa_Scraper_Assignment_Solution
 pip install -r requirements.txt
 
-rm -rf data                    # my data ships with the repo, clear it for a fresh run
+rm -rf data                    # my data ships with the repo, very important for a fresh run otherwise script will sense the run as complete
 
 python get_raw_data.py         # scrapes shop by shop, resumable if it dies
 python consolidate_data.py     # flattens everything into one CSV
