@@ -9,23 +9,31 @@
   "fps_id": "158500100030",
   "fps_name": "SUNITA V UMBRAXAR-100 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158500100030",
-  "scraped_at_utc": "2026-08-09T11:03:38+00:00",
+  "scraped_at_utc": "2026-08-09T18:58:01+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "291",
-      "value": 291
+      "value": 291,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "291",
-      "value": 291
+      "value": 291,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

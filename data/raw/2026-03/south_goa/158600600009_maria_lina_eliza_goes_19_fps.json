@@ -9,23 +9,31 @@
   "fps_id": "158600600009",
   "fps_name": "MARIA LINA ELIZA GOES-19 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158600600009",
-  "scraped_at_utc": "2026-08-09T11:02:26+00:00",
+  "scraped_at_utc": "2026-08-09T18:56:41+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "169",
-      "value": 169
+      "value": 169,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "169",
-      "value": 169
+      "value": 169,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

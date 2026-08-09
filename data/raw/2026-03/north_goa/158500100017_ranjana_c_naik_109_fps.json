@@ -9,23 +9,31 @@
   "fps_id": "158500100017",
   "fps_name": "RANJANA C NAIK-109 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158500100017",
-  "scraped_at_utc": "2026-08-04T21:38:16+00:00",
+  "scraped_at_utc": "2026-08-09T18:51:23+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "216",
-      "value": 216
+      "value": 216,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "216",
-      "value": 216
+      "value": 216,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

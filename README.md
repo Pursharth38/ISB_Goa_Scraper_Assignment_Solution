@@ -7,11 +7,11 @@
 
 ## 1. Problem statement
 
-Build a scraper that collects **Fair Price Shop (FPS) level sale transaction data** for **Goa** — both districts, for **March 2026** and **April 2026** with proper error handling and logging.
+Build a scraper that collects **Fair Price Shop (FPS) level sale transaction data** for **Goa** -both districts, for **March 2026** and **April 2026** with proper error handling and logging.
 
-**The approach in short:** the site has no links to follow — it fetches everything through background calls and remembers where you are on the server. So rather than automating the clicks in a browser with Selenium or Playwright, the script makes those same calls directly with a `requests` session: set the month and district, read the shop list the site itself publishes, then pull one page per shop and save it.
+**The approach in short:** the site has no links to follow - it fetches everything through background calls and remembers where you are on the server. So rather than automating the clicks in a browser with Selenium or Playwright, the script makes those same calls directly with a `requests` session: set the month and district, read the shop list the site itself publishes, then pull one page per shop and save it.
 
-That works out to one request per shop instead of the nine a browser fires, with no browser to start or wait on — the full run of 904 shop requests finishes in about 10 minutes it is **efficient and requires much less compute**.
+That works out to one request per shop instead of the nine a browser fires, with no browser to start or wait on - the full run of 904 shop requests finishes in about 10 minutes it is **efficient and requires much less compute**.
 
 ---
 
@@ -19,7 +19,7 @@ That works out to one request per shop instead of the nine a browser fires, with
 
 ### 2.1 First observation: the URL never changes
 
-Clicking down the hierarchy — state, district, shop — changed the content on screen but **never changed the address bar**. So the page was fetching data in the background, and there was no URL I could simply copy and iterate over. Whatever the script had to do, it wasn't going to be "loop over a list of links."
+Clicking down the hierarchy - state, district, shop changed the content on screen but **never changed the address bar**. So the page was fetching data in the background, and there was no URL I could simply copy and iterate over. Whatever the script had to do, it wasn't going to be "loop over a list of links."
 
 ### 2.2 DevTools first, then a Playwright wiretap
 
@@ -249,12 +249,12 @@ The second script turns those 904 JSON files into one CSV, **one row per shop pe
 
 ### 8.1 Flattening
 
-Each shop file has four summary cards and three tables. Flattening walks them in a fixed order and produces **74 columns**:
+Each shop file has four summary cards and three tables. Flattening walks them in a fixed order and produces **76 columns**:
 
 | Group | Columns | Example |
 |---|---|---|
 | Identity | 8 | `fps_id`, `fps_name`, `district`, `month` |
-| Summary cards | 4 + 1 derived | `total_etransactions`, `aadhaar_authenticated_pct` |
+| Summary cards | 7 | `total_etransactions`, `aadhaar_authenticated_pct` |
 | Transactions | 8 | `phh_regular_txn`, `aay_inter_state_txn` |
 | Ration cards | 8 | `phh_total_ration_card` |
 | Quantity | 44 | `rice_regular_kg`, `barley_intra_state_kg` |
@@ -262,7 +262,7 @@ Each shop file has four summary cards and three tables. Flattening walks them in
 
 Names follow one pattern throughout — `{who}_{which transaction}_{what}` — so a column can be read without a lookup table.
 
-One catch worth naming: **the same row is spelled differently in different tables.** The transaction table says `Priority Household(PHH)`, the ration card table says `Priority Household (PHH)` — one space apart. Matching on the exact string silently drops half the columns, so rows are matched on a squashed version of the label (letters and digits only), which makes the spacing irrelevant.
+The summary cards are seven columns rather than four because three of them show a percentage under the count on the page as well — `Aadhaar Authenticated` reads `279` and `100%`. Both are taken as shown. The Total card has no percentage, so it has no `_pct` column.
 
 ### 8.2 Cleaning
 
@@ -309,7 +309,7 @@ Before finishing, the script compares the rows written against the totals in eve
 
 ## 11. How to run it
 
-**Requirements** — Python 3.9+ and two packages:
+**Requirements** — Python 3.8 or newer, and two packages:
 
 ```bash
 pip install -r requirements.txt

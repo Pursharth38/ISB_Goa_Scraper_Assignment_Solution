@@ -9,23 +9,31 @@
   "fps_id": "158500100043",
   "fps_name": "DULER V.K.S SOCIETY-6 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158500100043",
-  "scraped_at_utc": "2026-08-04T21:38:26+00:00",
+  "scraped_at_utc": "2026-08-09T18:51:42+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "357",
-      "value": 357
+      "value": 357,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "357",
-      "value": 357
+      "value": 357,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

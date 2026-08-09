@@ -9,23 +9,31 @@
   "fps_id": "158600700001",
   "fps_name": "PONDA CONS CORP STY LTD-1 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158600700001",
-  "scraped_at_utc": "2026-08-09T11:07:31+00:00",
+  "scraped_at_utc": "2026-08-09T19:02:26+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "266",
-      "value": 266
+      "value": 266,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "266",
-      "value": 266
+      "value": 266,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

@@ -9,23 +9,31 @@
   "fps_id": "158600200005",
   "fps_name": "M.S.TALAULICAR MINE STAFF CONS COOP SOCIETY LTD-6 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158600200005",
-  "scraped_at_utc": "2026-08-09T11:06:10+00:00",
+  "scraped_at_utc": "2026-08-09T19:00:51+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "260",
-      "value": 260
+      "value": 260,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "251",
-      "value": 251
+      "value": 251,
+      "percent_raw": "96.538%",
+      "percent": 96.538
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "9",
-      "value": 9
+      "value": 9,
+      "percent_raw": "3.462%",
+      "percent": 3.462
     }
   },
   "tables": {

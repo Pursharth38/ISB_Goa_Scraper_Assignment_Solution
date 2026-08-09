@@ -9,23 +9,31 @@
   "fps_id": "158500600087",
   "fps_name": "JANATA CONSUMER CO OP STY-9 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158500600087",
-  "scraped_at_utc": "2026-08-04T21:39:51+00:00",
+  "scraped_at_utc": "2026-08-09T18:54:19+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "50",
-      "value": 50
+      "value": 50,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "50",
-      "value": 50
+      "value": 50,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

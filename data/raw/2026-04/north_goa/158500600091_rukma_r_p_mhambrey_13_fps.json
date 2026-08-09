@@ -9,23 +9,31 @@
   "fps_id": "158500600091",
   "fps_name": "RUKMA R.P MHAMBREY-13 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158500600091",
-  "scraped_at_utc": "2026-08-09T11:05:34+00:00",
+  "scraped_at_utc": "2026-08-09T19:00:21+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "104",
-      "value": 104
+      "value": 104,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "104",
-      "value": 104
+      "value": 104,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

@@ -9,23 +9,31 @@
   "fps_id": "158500100026",
   "fps_name": "DAYANAND S GADEKAR-110 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158500100026",
-  "scraped_at_utc": "2026-08-09T11:03:35+00:00",
+  "scraped_at_utc": "2026-08-09T18:57:58+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "74",
-      "value": 74
+      "value": 74,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "74",
-      "value": 74
+      "value": 74,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

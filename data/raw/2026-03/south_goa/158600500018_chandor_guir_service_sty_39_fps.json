@@ -9,23 +9,31 @@
   "fps_id": "158600500018",
   "fps_name": "CHANDOR GUIR SERVICE STY-39 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158600500018",
-  "scraped_at_utc": "2026-08-09T11:02:03+00:00",
+  "scraped_at_utc": "2026-08-09T18:56:06+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "488",
-      "value": 488
+      "value": 488,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "488",
-      "value": 488
+      "value": 488,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

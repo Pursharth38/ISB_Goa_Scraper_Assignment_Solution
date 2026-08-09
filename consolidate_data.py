@@ -22,6 +22,10 @@ SUMMARY_CARDS = {
     "Non-Authenticated": "non_authenticated",
 }
 
+# these three print a % under the count on the page, the total card does not
+CARDS_WITH_PERCENT = {"Aadhaar Authenticated", "Other Mode Authenticated",
+                      "Non-Authenticated"}
+
 # the two transaction tables share these row labels, but not the exact spelling -
 # one says "Priority Household(PHH)" and the other "Priority Household (PHH)",
 # so rows are matched on a squashed version of the label (see match_row)
@@ -108,22 +112,15 @@ def flatten_record(record):
         "month_name": record.get("month_name"),
     }
 
-    # 1 the four summary cards
+    # 1 the four summary cards, plus the % the three authentication ones show
     cards = record.get("summary_cards", {})
     for label, column in SUMMARY_CARDS.items():
         card = cards.get(label) or {}
         row[column] = card.get("value") if card.get("value") is not None else to_number(card.get("raw"))
+        if label in CARDS_WITH_PERCENT:
+            row[f"{column}_pct"] = card.get("percent")
 
-    # 2 share of transactions done by aadhaar, the one derived number we add
-    total_txn = row.get("total_etransactions")
-    aadhaar = row.get("aadhaar_authenticated")
-    if total_txn and aadhaar is not None:
-        row["aadhaar_authenticated_pct"] = round(aadhaar * 100.0 / total_txn, 2)
-    else:
-        # blank rather than 0, because "no transactions" is not "0% aadhaar"
-        row["aadhaar_authenticated_pct"] = None
-
-    # 3 the two ration card tables, same shape so the same loop does both
+    # 2 the two ration card tables, same shape so the same loop does both
     for table_key, suffix in (("number_of_transaction", "txn"),
                               ("number_of_transacted_ration_card", "ration_card")):
         table = tables.get(table_key)

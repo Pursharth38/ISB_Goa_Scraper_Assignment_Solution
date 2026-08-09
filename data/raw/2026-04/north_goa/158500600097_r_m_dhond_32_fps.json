@@ -9,23 +9,31 @@
   "fps_id": "158500600097",
   "fps_name": "R M DHOND-32 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158500600097",
-  "scraped_at_utc": "2026-08-09T11:05:40+00:00",
+  "scraped_at_utc": "2026-08-09T19:00:25+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "15",
-      "value": 15
+      "value": 15,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "15",
-      "value": 15
+      "value": 15,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

@@ -9,23 +9,31 @@
   "fps_id": "158600700051",
   "fps_name": "BANDIWADE V.K.S SOCIETY-18 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158600700051",
-  "scraped_at_utc": "2026-08-09T11:07:45+00:00",
+  "scraped_at_utc": "2026-08-09T19:02:39+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "379",
-      "value": 379
+      "value": 379,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "379",
-      "value": 379
+      "value": 379,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

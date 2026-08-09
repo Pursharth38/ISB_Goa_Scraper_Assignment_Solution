@@ -9,23 +9,31 @@
   "fps_id": "158600600007",
   "fps_name": "DILIP PANDURANG MASURKAR-16 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158600600007",
-  "scraped_at_utc": "2026-08-09T11:07:24+00:00",
+  "scraped_at_utc": "2026-08-09T19:02:19+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "465",
-      "value": 465
+      "value": 465,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "465",
-      "value": 465
+      "value": 465,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

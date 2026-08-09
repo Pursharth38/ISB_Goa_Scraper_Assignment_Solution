@@ -9,23 +9,31 @@
   "fps_id": "158500100324",
   "fps_name": "PRATIMA N VARKHANDKAR-113 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158500100324",
-  "scraped_at_utc": "2026-08-09T11:03:58+00:00",
+  "scraped_at_utc": "2026-08-09T18:58:26+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "188",
-      "value": 188
+      "value": 188,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "188",
-      "value": 188
+      "value": 188,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

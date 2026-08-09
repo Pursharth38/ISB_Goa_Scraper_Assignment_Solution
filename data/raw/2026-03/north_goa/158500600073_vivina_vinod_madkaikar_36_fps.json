@@ -9,23 +9,31 @@
   "fps_id": "158500600073",
   "fps_name": "Vivina Vinod Madkaikar -36 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158500600073",
-  "scraped_at_utc": "2026-08-04T21:39:46+00:00",
+  "scraped_at_utc": "2026-08-09T18:54:09+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "54",
-      "value": 54
+      "value": 54,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "54",
-      "value": 54
+      "value": 54,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

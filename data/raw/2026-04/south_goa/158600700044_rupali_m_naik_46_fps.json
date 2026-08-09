@@ -9,23 +9,31 @@
   "fps_id": "158600700044",
   "fps_name": "RUPALI M NAIK-46 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158600700044",
-  "scraped_at_utc": "2026-08-09T11:07:41+00:00",
+  "scraped_at_utc": "2026-08-09T19:02:36+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "201",
-      "value": 201
+      "value": 201,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "201",
-      "value": 201
+      "value": 201,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

@@ -165,6 +165,20 @@ def dashboard_block_value(soup, label):
     return None
 
 
+def dashboard_block_percent(soup, label):
+    """Reads the % printed under a summary card, None for a card that doesnt show one"""
+    # each card is one metro-nav-block1 div, so the search stays inside that card.
+    # find_next would run on into the next card and pick up its percentage instead
+    for label_div in soup.find_all("div", class_=re.compile(r"\bstatus1?\b")):
+        text = label_div.get_text(" ", strip=True).rstrip(":").strip()
+        if text.lower() != label.lower():
+            continue
+        card = label_div.find_parent("div", class_="metro-nav-block1")
+        percent = card.find("span", class_="perce_val") if card else None
+        if percent:
+            return percent.get_text(" ", strip=True).replace("\xa0", " ").strip()
+    return None
+
 def parse_panel_fps_id(soup):
     """Which shop the right panel is actually showing, None if theres no panel at all"""
     # this one check is what the whole run depends on (S5.1). kept strict on
@@ -215,7 +229,15 @@ def parse_shop_panel(html, metadata):
     summary_cards = {}
     for label in SUMMARY_CARD_LABELS:
         raw_value = dashboard_block_value(soup, label)
-        summary_cards[label] = {"raw": raw_value, "value": to_number(raw_value)}
+        # the three authentication cards also print a % under the count, the
+        # total doesnt, so percent stays None for that one
+        raw_percent = dashboard_block_percent(soup, label)
+        summary_cards[label] = {
+            "raw": raw_value,
+            "value": to_number(raw_value),
+            "percent_raw": raw_percent,
+            "percent": to_number(raw_percent.rstrip("%")) if raw_percent else None,
+        }
     record["summary_cards"] = summary_cards
 
     record["tables"] = {key: parse_table(soup, label) for key, label in TABLE_LABELS.items()}

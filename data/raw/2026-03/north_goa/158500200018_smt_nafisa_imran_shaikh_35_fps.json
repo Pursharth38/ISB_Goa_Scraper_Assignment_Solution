@@ -9,23 +9,31 @@
   "fps_id": "158500200018",
   "fps_name": "SMT. NAFISA IMRAN SHAIKH-35 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158500200018",
-  "scraped_at_utc": "2026-08-04T21:38:55+00:00",
+  "scraped_at_utc": "2026-08-09T18:52:36+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "336",
-      "value": 336
+      "value": 336,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "336",
-      "value": 336
+      "value": 336,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

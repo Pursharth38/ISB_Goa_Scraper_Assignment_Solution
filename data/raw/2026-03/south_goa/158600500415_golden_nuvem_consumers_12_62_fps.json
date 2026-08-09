@@ -9,23 +9,31 @@
   "fps_id": "158600500415",
   "fps_name": "GOLDEN NUVEM CONSUMERS -12&62 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158600500415",
-  "scraped_at_utc": "2026-08-09T11:02:17+00:00",
+  "scraped_at_utc": "2026-08-09T18:56:29+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "845",
-      "value": 845
+      "value": 845,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "845",
-      "value": 845
+      "value": 845,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {

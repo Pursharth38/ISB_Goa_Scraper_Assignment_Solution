@@ -9,23 +9,31 @@
   "fps_id": "158600300011",
   "fps_name": "ROSHAN V CHARI-53 FPS",
   "source_url": "https://impds.nic.in/sale/fpsByCountryAjax?stateCode=158600300011",
-  "scraped_at_utc": "2026-08-04T21:40:20+00:00",
+  "scraped_at_utc": "2026-08-09T18:55:10+00:00",
   "summary_cards": {
     "Total e-Transaction": {
       "raw": "43",
-      "value": 43
+      "value": 43,
+      "percent_raw": null,
+      "percent": null
     },
     "Aadhaar Authenticated": {
       "raw": "43",
-      "value": 43
+      "value": 43,
+      "percent_raw": "100%",
+      "percent": 100
     },
     "Other Mode Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     },
     "Non-Authenticated": {
       "raw": "0",
-      "value": 0
+      "value": 0,
+      "percent_raw": "0%",
+      "percent": 0
     }
   },
   "tables": {
