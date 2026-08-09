@@ -345,7 +345,7 @@ Run step 1 first — step 2 has nothing to read otherwise. On Windows, use `py` 
 ├── consolidate_data.py    builds the csv            (step 2)
 ├── network_analysis.py    the Playwright wiretap used for discovery (section 2.2)
 ├── requirements.txt       the two packages needed
-├── README.md            this file
+├── README.md              this file
 ├── capture/               the 15 responses the wiretap recorded
 └── data/
     ├── raw/               one json per shop, per month, per district
