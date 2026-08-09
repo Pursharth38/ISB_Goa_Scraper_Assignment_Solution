@@ -307,33 +307,20 @@ Before finishing, the script compares the rows written against the totals in eve
 
 ---
 
-## 11. How to run it
-
-**Requirements** — Python 3.8 or newer, and two packages:
+## 11. Running it
 
 ```bash
+git clone https://github.com/Pursharth38/ISB_Goa_Scraper_Assignment_Solution
+cd ISB_Goa_Scraper_Assignment_Solution
 pip install -r requirements.txt
+
+python get_raw_data.py         # scrapes shop by shop, resumable if it dies
+python consolidate_data.py     # flattens everything into one CSV
 ```
 
-Only `requests` and `beautifulsoup4`. No pandas — the consolidation writes one row per file with nothing to group or join, so `csv` from the standard library does it.
+Python 3.8 or newer. Only `requests` and `beautifulsoup4` — no pandas.
 
-**Step 1 — collect the raw data**
-
-```bash
-python get_raw_data.py
-```
-
-Fetches all 452 shops for both months (~10 minutes) and writes one JSON per shop under `data/raw/`, plus `scrape_run.log`. Safe to stop with Ctrl+C and run again — it skips shops it already has.
-
-**Step 2 — build the CSV**
-
-```bash
-python consolidate_data.py
-```
-
-Reads everything under `data/raw/` and writes `data/processed/fps_sales_goa_2026.csv`. Prints nothing; exits 0 if the data is complete and clean, 1 if rows are missing or flagged.
-
-Run step 1 first — step 2 has nothing to read otherwise. On Windows, use `py` in place of `python` if that is where your packages are installed.
+Step 1 takes about 10 minutes and writes one JSON per shop under `data/raw/`. Step 2 reads those and writes `data/processed/fps_sales_goa_2026.csv`, so run it second. On Windows use `py` instead of `python` if that is where your packages are.
 
 ---
 
