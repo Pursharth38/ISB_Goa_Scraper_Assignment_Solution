@@ -314,13 +314,25 @@ git clone https://github.com/Pursharth38/ISB_Goa_Scraper_Assignment_Solution
 cd ISB_Goa_Scraper_Assignment_Solution
 pip install -r requirements.txt
 
+rm -rf data                    # my data ships with the repo, clear it for a fresh run
+
 python get_raw_data.py         # scrapes shop by shop, resumable if it dies
 python consolidate_data.py     # flattens everything into one CSV
 ```
 
+In PowerShell, the two lines that differ:
+
+```powershell
+Remove-Item data -Recurse -Force
+py get_raw_data.py
+py consolidate_data.py
+```
+
+Or just delete the `data` folder by hand in the file explorer — same thing.
+
 Python 3.8 or newer. Only `requests` and `beautifulsoup4` — no pandas.
 
-Step 1 takes about 10 minutes and writes one JSON per shop under `data/raw/`. Step 2 reads those and writes `data/processed/fps_sales_goa_2026.csv`, so run it second. On Windows use `py` instead of `python` if that is where your packages are.
+Step 1 takes about 10 minutes and writes one JSON per shop under `data/raw/`. Step 2 reads those and writes `data/processed/fps_sales_goa_2026.csv`, so run it second. Both scripts create the folders they need.
 
 ---
 
